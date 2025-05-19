@@ -9,35 +9,35 @@ const testimonials = [
     position: "CEO, Retail Solutions",
     quote:
       "TRIVINSAI Digital transformed our online presence. Conversions increased by 40% in just two months.",
-    image: "/avatars/sarah.jpg",
+    image: "/avatars/A5.png",
   },
   {
     name: "Mark Williams",
     position: "Product Manager, TechStart",
     quote:
       "The app they built received rave reviews. Their UX and attention to detail are unmatched.",
-    image: "/avatars/mark.jpg",
+    image: "/avatars/A4.png",
   },
   {
     name: "Jennifer Lee",
     position: "Marketing Director, GrowFast",
     quote:
       "They brought our vision to life with pixel-perfect execution. Incredible engagement!",
-    image: "/avatars/jennifer.jpg",
+    image: "/avatars/A3.png",
   },
   {
     name: "Daniel Kim",
     position: "CTO, InnovateX",
     quote:
       "A seamless process from start to finish. We’re thrilled with the final product.",
-    image: "/avatars/daniel.jpg",
+    image: "/avatars/A2.png",
   },
   {
     name: "Ayesha Patel",
     position: "Founder, EcoMart",
     quote:
       "Professional, creative, and easy to work with. Highly recommended.",
-    image: "/avatars/ayesha.jpg",
+    image: "/avatars/A1.png",
   },
 ];
 
