@@ -126,12 +126,12 @@ export default function FAQClientPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
+      <section className="dark:bg-[#6D819C]  py-16 md:py-24 bg-primary/20 ">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
-              <p className="text-xl text-muted-foreground">
+              <h1 className="text-4xl text-[#111827] md:text-5xl lg:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
+              <p className="text-xl text-muted-foreground text-[#111827]   ">
                 Find answers to common questions about our services, process, and more.
               </p>
             </div>
@@ -140,16 +140,16 @@ export default function FAQClientPage() {
       </section>
 
       {/* FAQ Categories */}
-      <section className="py-8 border-b">
+      <section className="py-8 dark:bg-[#111827] border-b">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex  flex-wrap gap-4 justify-center">
               {categories.map((category) => (
                 <Button
                   key={category.id}
                   variant={activeCategory === category.id ? "default" : "outline"}
                   onClick={() => setActiveCategory(category.id)}
-                  className={activeCategory === category.id ? "bg-primary hover:bg-primary/90" : ""}
+                  className={activeCategory === category.id ? "bg-primary dark:bg-[#6D819C] dark:hover:bg-[#1a385e] hover:bg-primary/90" : ""}
                 >
                   {category.name}
                 </Button>
@@ -160,7 +160,7 @@ export default function FAQClientPage() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 dark:bg-[#111827] md:py-24">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="max-w-3xl mx-auto">
@@ -185,16 +185,16 @@ export default function FAQClientPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
+      <section className="py-16 dark:bg-[#6D819C] md:py-24 ">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Still Have Questions?</h2>
-              <p className="text-xl text-muted-foreground mb-8">
+            <div className="text-center text-[#111827] max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl text-[#111827] font-bold mb-6">Still Have Questions?</h2>
+              <p className="text-xl text-[#111827] text-muted-foreground mb-8">
                 Can't find the answer you're looking for? Contact our team for personalized assistance.
               </p>
               <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-secondary text-white">
+                <Button size="lg" className="bg-primary hover:bg-secondary dark:hover:bg-[#274163] dark:bg-[#111827] hover:shadow-xl text-white">
                   Contact Us
                 </Button>
               </Link>

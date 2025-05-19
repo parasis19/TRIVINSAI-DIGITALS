@@ -14,7 +14,7 @@ export default function ServicesPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
+      <section className="py-16 dark:bg-[#6D819C] md:py-24 ">
         <div className="container mx-auto px-4 text-center">
           <ScrollAnimation>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Services</h1>
@@ -26,14 +26,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Website Development Section */}
-      <section id="websites" className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
+      <section id="websites" className="py-16 md:py-24 dark:bg-[#111827]">
+        <div className="container mx-auto px-4 ">
+          <div className="flex flex-col lg:flex-row items-center gap-12 dark:bg-[#111827] ">
+            <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden  ">
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/services/webC.jpg?height=400&width=600"
                     alt="Website Development"
                     fill
                     className="object-cover"
@@ -77,7 +77,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="pt-4">
                   <Link href="/contact">
-                    <Button className="bg-primary hover:bg-secondary text-white">Get a Quote</Button>
+                    <Button className="bg-primary dark:hover:bg-[#111827] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
                   </Link>
                 </div>
               </ScrollAnimation>
@@ -87,14 +87,14 @@ export default function ServicesPage() {
       </section>
 
       {/* App Development Section */}
-      <section id="apps" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
-            <div className="lg:w-1/2">
+      <section id="apps" className="py-16 md:py-24  bg-gray-50 dark:bg-[#070c17]  ">
+        <div className="container mx-auto px-4 dark:bg-[#070c17]">
+          <div className="flex flex-col  lg:flex-row-reverse items-center gap-12">
+            <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden ">
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/services/appC.jpg?height=400&width=600"
                     alt="App Development"
                     fill
                     className="object-cover"
@@ -137,7 +137,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="pt-4">
                   <Link href="/contact">
-                    <Button className="bg-primary hover:bg-secondary text-white">Get a Quote</Button>
+                    <Button className="bg-primary dark:hover:bg-[#111827] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
                   </Link>
                 </div>
               </ScrollAnimation>
@@ -147,13 +147,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Ad Creation Section */}
-      <section id="ads" className="py-16 md:py-24">
+      <section id="ads" className="py-16 md:py-24 dark:bg-[#111827]">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
+          <div className="flex flex-col lg:flex-row items-center gap-12 dark:bg-[#111827]">
+            <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden ">
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image src="/placeholder.svg?height=400&width=600" alt="Ad Creation" fill className="object-cover" />
+                  <Image src="/services/addC.jpg?height=400&width=600" alt="Ad Creation" fill className="object-cover" />
                 </div>
               </ScrollAnimation>
             </div>
@@ -192,7 +192,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="pt-4">
                   <Link href="/contact">
-                    <Button className="bg-primary hover:bg-secondary text-white">Get a Quote</Button>
+                    <Button className="bg-primary dark:hover:bg-[#111827] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
                   </Link>
                 </div>
               </ScrollAnimation>
@@ -202,7 +202,7 @@ export default function ServicesPage() {
       </section>
 
       {/* All Services Grid */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 md:py-24  bg-gradient-to-b from-white to-orange-100 dark:from-[#111827] dark:to-[#6D819C]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center mb-16">
@@ -263,7 +263,7 @@ export default function ServicesPage() {
       </section>
 
                 {/* Process Section */}
-      <section className="py-20 flex justify-center ">
+      <section className="py-20 flex justify-center dark:bg-[#111827] ">
         <div className="container mx-auto px-4 md:px-6 ">
           <ScrollAnimation>
             <div className="text-center mb-12 ">
@@ -274,97 +274,82 @@ export default function ServicesPage() {
             </div>
           </ScrollAnimation>
 
-          <div className="relative max-w-4xl mx-auto">
- {/* Process Section */}
-<section className="py-20 flex justify-center">
-  <div className="container mx-auto px-4 md:px-6">
-    <ScrollAnimation>
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
-        <p className="text-neutral-dark max-w-2xl mx-auto">
-          A streamlined approach to delivering exceptional results for every project.
-        </p>
-      </div>
-    </ScrollAnimation>
+<div className="relative dark:bg-[#111827]  max-w-4xl mx-auto">
+  {/* Vertical Line for Timeline */}
+  <div className="hidden md:block absolute inset-y-0 left-1/2 w-[3px] rounded-full bg-gray-300 -translate-x-1/2 z-0" />
 
-    <div className="relative max-w-4xl mx-auto">
-      {/* Vertical Line for Timeline */}
-      <div className="hidden md:block absolute inset-y-0 left-1/2 w-[3px] rounded-full bg-gray-300 -translate-x-1/2 z-0" />
+  <div className="space-y-12 relative z-10">
+    {[
+      {
+        title: "1. Discovery",
+        content: "We learn about your business, goals, and requirements to understand your unique needs.",
+      },
+      {
+        title: "2. Strategy",
+        content:
+          "We develop a comprehensive strategy tailored to your specific objectives and target audience.",
+      },
+      {
+        title: "3. Design",
+        content:
+          "Our creative team crafts visually appealing designs that align with your brand identity.",
+      },
+      {
+        title: "4. Development",
+        content:
+          "Our technical team brings the designs to life with clean, efficient code and robust functionality.",
+      },
+      {
+        title: "5. Testing",
+        content:
+          "Rigorous testing ensures everything works flawlessly across all devices and platforms.",
+      },
+      {
+        title: "6. Launch",
+        content:
+          "We deploy your project and ensure a smooth transition to the live environment.",
+      },
+      {
+        title: "7. Support",
+        content:
+          "Ongoing support and maintenance to keep your digital assets performing at their best.",
+      },
+    ].map((step, index) => (
+      <ScrollAnimation key={index} delay={index * 100}>
+        <div className="md:flex items-center relative">
+          {/* Left Side */}
+          <div className={`md:w-1/2 ${index % 2 === 0 ? "pr-12 md:text-right" : ""}`}>
+            {index % 2 === 0 && (
+              <>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-neutral-dark">{step.content}</p>
+              </>
+            )}
+          </div>
 
-      <div className="space-y-12 relative z-10">
-        {[
-          {
-            title: "1. Discovery",
-            content: "We learn about your business, goals, and requirements to understand your unique needs.",
-          },
-          {
-            title: "2. Strategy",
-            content:
-              "We develop a comprehensive strategy tailored to your specific objectives and target audience.",
-          },
-          {
-            title: "3. Design",
-            content:
-              "Our creative team crafts visually appealing designs that align with your brand identity.",
-          },
-          {
-            title: "4. Development",
-            content:
-              "Our technical team brings the designs to life with clean, efficient code and robust functionality.",
-          },
-          {
-            title: "5. Testing",
-            content:
-              "Rigorous testing ensures everything works flawlessly across all devices and platforms.",
-          },
-          {
-            title: "6. Launch",
-            content:
-              "We deploy your project and ensure a smooth transition to the live environment.",
-          },
-          {
-            title: "7. Support",
-            content:
-              "Ongoing support and maintenance to keep your digital assets performing at their best.",
-          },
-        ].map((step, index) => (
-          <ScrollAnimation key={index} delay={index * 100}>
-            <div className="md:flex items-center relative">
-              {/* Left Side */}
-              <div className={`md:w-1/2 ${index % 2 === 0 ? "pr-12 md:text-right" : ""}`}>
-                {index % 2 === 0 && (
-                  <>
-                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-neutral-dark">{step.content}</p>
-                  </>
-                )}
-              </div>
+          {/* Center Circle */}
+          {/* <div className="md:block absolute left-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
+            <span className="font-bold">{index + 1}</span>
+          </div> */}
 
-              {/* Center Circle */}
-              {/* <div className="md:block absolute left-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
-                <span className="font-bold">{index + 1}</span>
-              </div> */}
-
-              {/* Right Side */}
-              <div className={`md:w-1/2 ${index % 2 === 1 ? "md:pl-12 mt-4 md:mt-0" : ""}`}>
-                {index % 2 === 1 && (
-                  <>
-                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-neutral-dark">{step.content}</p>
-                  </>
-                )}
-              </div>
-            </div>
-          </ScrollAnimation>
-        ))}
-      </div>
-    </div>
+          {/* Right Side */}
+          <div className={`md:w-1/2 ${index % 2 === 1 ? "md:pl-12 mt-4 md:mt-0" : ""}`}>
+            {index % 2 === 1 && (
+              <>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-neutral-dark">{step.content}</p>
+              </>
+            )}
+          </div>
+        </div>
+      </ScrollAnimation>
+    ))}
   </div>
-</section>
+</div>
+</div>
+</section> 
 
-        </div>
-        </div>
-      </section>
+       
       
 
       {/* CTA Section */}
@@ -389,5 +374,6 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
+    
   )
 }

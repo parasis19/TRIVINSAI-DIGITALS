@@ -52,7 +52,7 @@ export default function AboutPage() {
                 </p>
               </ScrollAnimation>
             </div>
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 sm:w-auto" >
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image

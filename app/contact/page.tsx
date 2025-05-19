@@ -12,12 +12,12 @@ export default function ContactPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-24 dark:bg-[#6D819C] bg-orange-200">
+        <div className="container mx-auto  px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Get In Touch</h1>
-              <p className="text-xl text-muted-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-[#111827] mb-6">Get In Touch</h1>
+              <p className="text-xl text-muted-foreground dark:text-white text-[#111827]">
                 Have a project in mind? We'd love to hear from you. Fill out the form below or reach out to us directly.
               </p>
             </div>
@@ -26,7 +26,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info & Form Section */}
-      <section className="py-16 md:py-24">
+      <section className="dark:bg-[#111827] py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/3 space-y-8">
@@ -34,7 +34,7 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold mb-6"></h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <MapPin className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-1" />
+                    <MapPin className="h-6 w-6 text-primary dark:text-[#6D819C] mr-3 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Address</h3>
                       <p className="text-muted-foreground">
@@ -47,7 +47,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <Phone className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-1" />
+                    <Phone className="h-6 w-6 text-primary dark:text-[#6D819C] mr-3 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
                       <p className="text-muted-foreground">
@@ -58,7 +58,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <Mail className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-1" />
+                    <Mail className="h-6 w-6 text-primary dark:text-[#6D819C] mr-3 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <p className="text-muted-foreground">
@@ -81,7 +81,7 @@ export default function ContactPage() {
             <div className="lg:w-2/3">
               <ScrollAnimation>
                 <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-border">
-                  <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                  <h2 className="text-2xl  font-bold mb-6">Send Us a Message</h2>
                   <ContactForm />
                 </div>
               </ScrollAnimation>
@@ -91,7 +91,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      <section className="  py-16 bg-gradient-to-b from-white to-orange-100 dark:from-[#111827] dark:to-[#6D819C] md:py-24 bg-gray-50 ">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center mb-12">
@@ -122,12 +122,12 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24">
+      <section className="   bg-gradient-to-t from-white to-orange-100 dark:from-[#111827] dark:to-[#6D819C] py-16 md:py-24">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-muted-foreground max-w-3xl mx-auto">
+              <h2 className="text-3xl dark:text-[#111827] font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-muted-foreground dark:text-[#111827] max-w-3xl mx-auto">
                 Find quick answers to common questions about our services
               </p>
             </div>

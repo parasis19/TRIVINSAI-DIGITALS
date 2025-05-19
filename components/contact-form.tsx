@@ -75,7 +75,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
-          <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" required />
+          <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" required className="dark:bg-[#111827]" />
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
@@ -87,16 +87,20 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Your email address"
             required
+            className="dark:bg-[#111827]"
           />
         </div>
       </div>
       <div className="space-y-2">
         <Label htmlFor="service">Service</Label>
         <Select value={formData.service} onValueChange={handleServiceChange}>
-          <SelectTrigger id="service">
-            <SelectValue placeholder="Select a service" />
+          <SelectTrigger id="service" 
+          className="dark:bg-[#111827]">
+            <SelectValue  placeholder="Select a service" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent
+           className="dark:bg-[#111827]
+            ">
             <SelectItem value="website">Website Development</SelectItem>
             <SelectItem value="app">App Development</SelectItem>
             <SelectItem value="ad">Ad Creation</SelectItem>
@@ -104,7 +108,7 @@ export default function ContactForm() {
           </SelectContent>
         </Select>
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2  ">
         <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
@@ -114,9 +118,10 @@ export default function ContactForm() {
           placeholder="Tell us about your project"
           rows={6}
           required
+          className="dark:bg-[#111827]"
         />
       </div>
-      <Button type="submit" className="w-full bg-primary hover:bg-secondary text-white" disabled={isSubmitting}>
+      <Button type="submit" className="w-full dark:bg-[#355987] dark:hover:bg-[#274163] bg-primary hover:bg-secondary text-white" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>

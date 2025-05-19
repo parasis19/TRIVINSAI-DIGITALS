@@ -178,12 +178,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+      
       {/* Process Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-20 dark:bg-[#111827]">
+        <div className="container mx-auto dark:bg-[#111827]  px-4 md:px-6">
           <ScrollAnimation>
-            <div className="text-center mb-12">
+            <div className="text-center dark:bg-[#111827]  mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
               <p className="text-neutral-dark max-w-2xl mx-auto">
                 A streamlined approach to delivering exceptional results for every project.
@@ -191,7 +191,7 @@ export default function ServicesPage() {
             </div>
           </ScrollAnimation>
 
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-4xl dark:bg-[#111827] mx-auto">
             {/* Process Timeline */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-neutral transform -translate-x-1/2"></div>
 

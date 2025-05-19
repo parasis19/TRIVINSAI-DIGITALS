@@ -1,137 +1,115 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-interface Testimonial {
-  id: number
-  name: string
-  position: string
-  company: string
-  content: string
-  image: string
-}
-
-const testimonials: Testimonial[] = [
+const testimonials = [
   {
-    id: 1,
     name: "Sarah Johnson",
-    position: "CEO",
-    company: "TechStart Inc.",
-    content:
-      "TRIVINSAI Digital transformed our online presence completely. Their website design not only looks stunning but has significantly improved our conversion rates. The team was professional, responsive, and delivered beyond our expectations.",
-    image: "/placeholder.svg?height=80&width=80",
+    position: "CEO, Retail Solutions",
+    quote:
+      "TRIVINSAI Digital transformed our online presence. Conversions increased by 40% in just two months.",
+    image: "/avatars/sarah.jpg",
   },
   {
-    id: 2,
-    name: "Michael Chen",
-    position: "Marketing Director",
-    company: "GrowthBrand",
-    content:
-      "The app TRIVINSAI developed for us has received outstanding feedback from our users. Their attention to detail and focus on user experience is exceptional. They took our concept and elevated it to something truly remarkable.",
-    image: "/placeholder.svg?height=80&width=80",
+    name: "Mark Williams",
+    position: "Product Manager, TechStart",
+    quote:
+      "The app they built received rave reviews. Their UX and attention to detail are unmatched.",
+    image: "/avatars/mark.jpg",
   },
   {
-    id: 3,
-    name: "Emily Rodriguez",
-    position: "Founder",
-    company: "Artisan Collective",
-    content:
-      "Our digital marketing campaign with TRIVINSAI yielded a 200% increase in qualified leads. Their strategic approach and creative execution were exactly what we needed. I highly recommend their services to any business looking to grow.",
-    image: "/placeholder.svg?height=80&width=80",
+    name: "Jennifer Lee",
+    position: "Marketing Director, GrowFast",
+    quote:
+      "They brought our vision to life with pixel-perfect execution. Incredible engagement!",
+    image: "/avatars/jennifer.jpg",
   },
-]
+  {
+    name: "Daniel Kim",
+    position: "CTO, InnovateX",
+    quote:
+      "A seamless process from start to finish. We’re thrilled with the final product.",
+    image: "/avatars/daniel.jpg",
+  },
+  {
+    name: "Ayesha Patel",
+    position: "Founder, EcoMart",
+    quote:
+      "Professional, creative, and easy to work with. Highly recommended.",
+    image: "/avatars/ayesha.jpg",
+  },
+];
 
-export default function TestimonialCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
+export default function TestimonialsCarousel() {
+  const [index, setIndex] = useState(0);
+  const total = testimonials.length;
 
-  const goToNext = () => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-    setTimeout(() => setIsAnimating(false), 500)
-  }
-
-  const goToPrev = () => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
-    setTimeout(() => setIsAnimating(false), 500)
-  }
+  const next = () => setIndex((prev) => (prev + 1) % total);
+  const prev = () => setIndex((prev) => (prev - 1 + total) % total);
 
   useEffect(() => {
-    const interval = setInterval(goToNext, 8000)
-    return () => clearInterval(interval)
-  }, [])
+    const interval = setInterval(next, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getPositionClass = (i: number) => {
+    const offset = (i - index + total) % total;
+    if (offset === 0) return "z-20 scale-100 opacity-100";
+    if (offset === 1 || offset === total - 1)
+      return "z-10 scale-90 opacity-60 translate-x-1/2 md:translate-x-0";
+    return "hidden md:block opacity-0 scale-75";
+  };
 
   return (
-    <div className="relative glassmorphism rounded-xl p-8 overflow-hidden">
-      <div className="absolute top-8 left-6 text-primary/20">
-        <Quote size={50} />
-      </div>
-
-      <div className="relative z-10">
-        <div className={`transition-opacity duration-500 ${isAnimating ? "opacity-0" : "opacity-100"}`}>
-          <div className="flex flex-col md:flex-row gap-6 items-center">
-            <div className="flex-shrink-0">
-              <Image
-                src={testimonials[currentIndex].image || "/placeholder.svg"}
-                alt={testimonials[currentIndex].name}
-                width={80}
-                height={80}
-                className="rounded-full border-4 border-white shadow-lg"
-              />
-            </div>
-            <div>
-              <p className="text-lg mb-4">{testimonials[currentIndex].content}</p>
-              <div>
-                <h4 className="font-bold">{testimonials[currentIndex].name}</h4>
-                <p className="text-neutral-dark">
-                  {testimonials[currentIndex].position}, {testimonials[currentIndex].company}
-                </p>
+    <div className="relative w-full max-w-6xl mx-auto px-4">
+      <div className="relative flex items-center justify-center overflow-hidden h-[400px]">
+        {testimonials.map((testimonial, i) => (
+          <div
+            key={i}
+            className={`absolute w-full md:w-1/2 transition-all duration-500 ease-in-out transform ${getPositionClass(i)}`}
+          >
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-border text-center mx-4">
+              <div className="flex justify-center text-primary mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-current" />
+                ))}
+              </div>
+              <p className="text-foreground text-lg mb-6">"{testimonial.quote}"</p>
+              <div className="flex items-center justify-center gap-4">
+                <div className="h-12 w-12 rounded-full bg-gray-300 dark:bg-gray-600 overflow-hidden">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-semibold">{testimonial.name}</h4>
+                  <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
 
-      <div className="flex justify-between mt-6">
-        <div className="flex gap-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                if (isAnimating) return
-                setIsAnimating(true)
-                setCurrentIndex(index)
-                setTimeout(() => setIsAnimating(false), 500)
-              }}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex ? "bg-primary" : "bg-neutral"
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        <div className="flex gap-2">
-          <button
-            onClick={goToPrev}
-            className="p-2 rounded-full bg-white/80 hover:bg-primary/10 transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={goToNext}
-            className="p-2 rounded-full bg-white/80 hover:bg-primary/10 transition-colors"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
+      {/* Nav Buttons */}
+      <div className="absolute top-1/2 left-4 -translate-y-1/2 z-30">
+        <button
+          onClick={prev}
+          className="p-2 dark:bg-[#6D819C] dark:hover:bg-[#39599c] hover:bg-orange-600 rounded-full bg-primary text-white hover:bg-primary/90 shadow"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+      </div>
+      <div className="absolute top-1/2 right-4 -translate-y-1/2 z-30">
+        <button
+          onClick={next}
+          className="p-2 dark:bg-[#6D819C] dark:hover:bg-[#39599c] hover:bg-orange-600 rounded-full bg-primary text-white hover:bg-primary/90 shadow"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
       </div>
     </div>
   )

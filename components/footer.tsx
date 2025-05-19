@@ -119,7 +119,7 @@ export default function Footer() {
       </div>
         <a
         href="tel:+11234567890"
-        className="fixed bottom-6 right-6 bg-orange-400 hover:bg-orange-600 transition-colors p-4 rounded-full "
+        className="fixed bottom-6 right-6 dark:bg-[#6D819C] dark:hover:bg-[#39599c] bg-orange-400 hover:bg-orange-600 transition-colors p-4 rounded-full "
         aria-label="call us"
       >
         <PhoneCall  className="h-5 w-5 text-white" />
