@@ -99,6 +99,12 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center">
+                <Phone className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
+                <a href="tel:+91 97689 79213" className="text-muted-foreground hover:text-primary transition-colors">
+                  +91 97689 79213
+                </a>
+              </li>
+              <li className="flex items-center">
                 <Mail className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
                 <a
                   href="mailto:marketing@trivinsai.com
