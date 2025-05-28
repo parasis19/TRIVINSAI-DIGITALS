@@ -97,7 +97,7 @@ export default function TemplatesPreviewSection() {
     href={`mailto:your@email.com?subject=Request to Use ${template.title}&body=I would like to use the "${template.title}" template under "${categories.find(c => c.id === template.category)?.name}" category.`}
   >
     <Button className="bg-primary hover:bg-secondary text-white">
-      Use This Template
+      Get Quote
     </Button>
   </a>
 </div>

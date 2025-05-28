@@ -142,7 +142,7 @@ export default function TemplatesPage() {
                             href={`mailto:your@email.com?subject=Request Template: ${template.title}&body=Hi,%0D%0A%0D%0AI would like to use the template "${template.title}" from the "${template.category}" category.`}
                           >
                             <Button className="bg-primary hover:bg-secondary text-white">
-                              Use This Template
+                              Get Quote 
                             </Button>
                           </a>
                         </div>
