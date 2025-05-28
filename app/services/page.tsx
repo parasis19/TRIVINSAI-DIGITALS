@@ -14,7 +14,9 @@ export default function ServicesPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 dark:bg-[#6D819C] md:py-24 ">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900 border-t transition-all duration-300 
+    bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
+    dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]  md:py-24 ">
         <div className="container mx-auto px-4 text-center">
           <ScrollAnimation>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Services</h1>
@@ -41,7 +43,7 @@ export default function ServicesPage() {
                 </div>
               </ScrollAnimation>
             </div>
-            <div className="lg:w-1/2 space-y-6">
+            <div className="lg:w-1/2 space-y-6 ">
               <ScrollAnimation>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Website Development</h2>
                 <p className="text-xl text-muted-foreground mb-6">
@@ -77,7 +79,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="pt-4">
                   <Link href="/contact">
-                    <Button className="bg-primary dark:hover:bg-[#111827] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
+                    <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
                   </Link>
                 </div>
               </ScrollAnimation>

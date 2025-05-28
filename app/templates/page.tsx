@@ -1,12 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Filter } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
   Dialog,
   DialogContent,
@@ -17,33 +16,13 @@ import {
 } from "@/components/ui/dialog"
 import ScrollAnimation from "@/components/scroll-animation"
 
+import { templates, categories, Template } from "./data/templates"
+
 export default function TemplatesPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null)
 
-  // Template categories
-  const categories = [
-    { id: "all", name: "All Templates" },
-    { id: "blog", name: "Blog" },
-    { id: "portfolio", name: "Portfolio" },
-    { id: "business", name: "Business" },
-    { id: "landing", name: "Landing Page" },
-    { id: "ecommerce", name: "eCommerce" },
-  ]
-
-  // Template data
-  const templates: Template[] = Array.from({ length: 50 }, (_, i) => ({
-    id: `template-${i + 1}`,
-    title: `Template ${i + 1}`,
-    category: categories[Math.floor(Math.random() * (categories.length - 1)) + 1].id,
-    image: `/placeholder.svg?height=300&width=400&text=Template ${i + 1}`,
-    description: `A beautiful ${
-      categories[Math.floor(Math.random() * (categories.length - 1)) + 1].name
-    } template with modern design and responsive layout.`,
-  }))
-
-  // Filter templates based on search query and category
   const filteredTemplates = templates.filter((template) => {
     const matchesSearch = template.title.toLowerCase().includes(searchQuery.toLowerCase())
     const matchesCategory = categoryFilter === "all" || template.category === categoryFilter
@@ -53,12 +32,12 @@ export default function TemplatesPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 border-t bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Template Gallery</h1>
-              <p className="text-xl text-muted-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl dark:text-white text-primary font-bold mb-6">Template Gallery</h1>
+              <p className="text-xl text-primary dark:text-white">
                 Browse our collection of professionally designed templates for your next project.
               </p>
             </div>
@@ -66,10 +45,11 @@ export default function TemplatesPage() {
         </div>
       </section>
 
-      {/* Filter Section */}
-      <section className="py-8 border-b">
+      {/* Filter Section with Search and Category Tabs */}
+      <section className="py-8 border-b bg-orange-100 dark:bg-[#111827]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            {/* Search Input */}
             <div className="w-full md:w-auto flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
               <Input
@@ -80,27 +60,33 @@ export default function TemplatesPage() {
                 className="pl-10"
               />
             </div>
-            <div className="w-full md:w-64">
-              <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                <SelectTrigger>
-                  <Filter className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Filter by category" />
-                </SelectTrigger>
-                <SelectContent>
-                  {categories.map((category) => (
-                    <SelectItem key={category.id} value={category.id}>
-                      {category.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+          </div>
+
+          {/* Category Tabs */}
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            {categories.map((category) => {
+              const isActive = categoryFilter === category.id
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setCategoryFilter(category.id)}
+                  className={`px-4 py-2 rounded-full font-semibold transition-colors
+                    ${
+                      isActive
+                        ? "bg-primary text-white dark:bg-orange-600"
+                        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary/20 dark:hover:bg-orange-700"
+                    }`}
+                >
+                  {category.name}
+                </button>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Templates Grid */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-orange-100 dark:bg-[#111827]">
         <div className="container mx-auto px-4">
           {filteredTemplates.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -109,7 +95,7 @@ export default function TemplatesPage() {
                   <Dialog>
                     <DialogTrigger asChild>
                       <div
-                        className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-lift border border-border cursor-pointer"
+                        className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-transform border border-border cursor-pointer"
                         onClick={() => setSelectedTemplate(template)}
                       >
                         <div className="relative h-48 w-full">
@@ -130,7 +116,7 @@ export default function TemplatesPage() {
                         </div>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="max-w-4xl">
+                    <DialogContent className="max-w-4xl dark:bg-[#111827]">
                       <DialogHeader>
                         <DialogTitle>{template.title}</DialogTitle>
                         <DialogDescription>{template.description}</DialogDescription>
@@ -145,8 +131,20 @@ export default function TemplatesPage() {
                           />
                         </div>
                         <div className="flex justify-end gap-4">
-                          <Button variant="outline">Preview</Button>
-                          <Button className="bg-primary hover:bg-secondary text-white">Use This Template</Button>
+                          <a
+                            href={template.previewUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button variant="outline">Preview</Button>
+                          </a>
+                          <a
+                            href={`mailto:your@email.com?subject=Request Template: ${template.title}&body=Hi,%0D%0A%0D%0AI would like to use the template "${template.title}" from the "${template.category}" category.`}
+                          >
+                            <Button className="bg-primary hover:bg-secondary text-white">
+                              Use This Template
+                            </Button>
+                          </a>
                         </div>
                       </div>
                     </DialogContent>
@@ -164,16 +162,16 @@ export default function TemplatesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
+      <section className="py-16 md:py-24 bg-orange-200 dark:bg-[#6D819C]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Need a Custom Solution?</h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <h2 className="text-3xl md:text-4xl dark:text-white font-bold mb-6">Need a Custom Solution?</h2>
+              <p className="text-xl text-muted-foreground dark:text-white mb-8">
                 Can't find what you're looking for? We can create a custom design tailored to your specific needs.
               </p>
               <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-secondary text-white">
+                <Button size="lg" className="bg-primary dark:bg-[#111827] hover:bg-secondary dark:hover:bg-[#374151] text-white">
                   Contact Us
                 </Button>
               </Link>
@@ -183,13 +181,4 @@ export default function TemplatesPage() {
       </section>
     </div>
   )
-}
-
-// Template type definition
-interface Template {
-  id: string
-  title: string
-  category: string
-  image: string
-  description: string
 }

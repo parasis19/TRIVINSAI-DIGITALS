@@ -3,7 +3,11 @@ import { Mail, PhoneCall , Phone, MapPin, Facebook, PenOff, Instagram, Linkedin 
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 border-t">
+    <footer className="bg-gray-50 dark:bg-gray-900 border-t transition-all duration-300 
+    bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
+    dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] 
+    ">
+      
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -12,7 +16,9 @@ export default function Footer() {
               Transforming ideas into digital experiences. Your vision, our expertise.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Trivinsai/61565733548186/?mibextid=ZbWKwL" 
+              target="_blank"
+              className="text-muted-foreground hover:text-primary" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="https://x.com/trivinsai" 

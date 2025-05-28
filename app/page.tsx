@@ -1,10 +1,13 @@
+'use client'
 import { Code, Smartphone, PenTool, ArrowRightCircle, Star } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import ScrollAnimation from "@/components/scroll-animation"
+import StatsSection from "@/components/StatsSection"
 import TestimonialsCarousel from "@/components/testimonial-carousel";
 import ServiceCard from "@/components/service-card"
-import ContactSection from "@/components/ContactSection"
+import TemplatesPreviewSection from "@/components/TemplatesPreviewSection"
+// import ContactSection from "@/components/ContactSection"
 
 
 const services = [
@@ -51,7 +54,7 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 space-y-6 animate-slide-in">
-              <h1 className=" ligh:text-[#040866] dark:text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className=" text-[#111827] dark:text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Transform Your <span className="text-[#FFA500]">Digital Presence</span> With Us
               </h1>
               <p className="text-xl text-muted-foreground">
@@ -60,7 +63,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link href="/contact">
-                  <Button size="lg" className="dark:bg-primary dark:hover:bg-orange-600 hover:bg-orange-600 transition-all duration-300 hover:shadow-2xl text-white">
+                  <Button size="lg" className="dark:bg-primary rounded-full dark:hover:bg-orange-600 hover:bg-orange-600 transition-all duration-300 hover:shadow-2xl text-white">
                     Start Your Project
                   </Button>
                 </Link>
@@ -68,7 +71,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-primary hover:bg-orange-400 dark:text-primary dark:hover:bg-primary hover:text-white dark:hover:text-white dark:bg-white hover:border-primary hover:shadow-2xl text-primary"
+                    className="border-primary hover:bg-orange-400 dark:text-primary dark:hover:bg-primary hover:text-white dark:hover:text-white dark:bg-white hover:border-primary hover:shadow-2xl rounded-full    text-primary"
                   >
                     Explore Services
                   </Button>
@@ -108,7 +111,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-    
+     <TemplatesPreviewSection />
+     <StatsSection />
 
 
 
@@ -152,7 +156,10 @@ export default function Home() {
           </ScrollAnimation>
         </div>
       </section>
-      <ContactSection />
+      
+
+
+      {/* <ContactSection /> */}
       
     </div>
     

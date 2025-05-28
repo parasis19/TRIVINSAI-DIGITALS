@@ -40,36 +40,40 @@ export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
+      <section className="py-16 md:py-24  bg-gray-50 dark:bg-gray-900 border-t transition-all duration-300 
+    bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
+    dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 space-y-6">
               <ScrollAnimation>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">About Us</h1>
-                <p className="text-xl text-muted-foreground">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl dark:text-white text-[#111827] font-bold mb-6">About Us</h1>
+                <p className="text-xl text-[#111827] dark:text-white ">
                   TRIVINSAI Digital is a creative agency that helps businesses transform their digital presence through
                   innovative websites, apps, and digital marketing.
                 </p>
-              </ScrollAnimation>
-            </div>
-            <div className="lg:w-1/2 sm:w-auto" >
-              <ScrollAnimation>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=400&width=600"
-                    alt="About TRIVINSAI Digital"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </ScrollAnimation>
+</ScrollAnimation>
+</div>
+
+<div className="w-full lg:w-1/2 sm:w-full mt-6 lg:mt-0">
+  <ScrollAnimation>
+    <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full rounded-lg overflow-hidden">
+      <Image
+        src="/placeholder.svg?height=400&width=600"
+        alt="About TRIVINSAI Digital"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </ScrollAnimation>
+
             </div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 dark:bg-[#0b111e]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16">
             <ScrollAnimation>
@@ -113,7 +117,7 @@ export default function AboutPage() {
           </ScrollAnimation>
 
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2 sm:w-full mt-6 lg:mt-0">
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/placeholder.svg?height=400&width=600" alt="Our Story" fill className="object-cover" />
@@ -146,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 dark:bg-[#0b111e]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center mb-16">
@@ -160,7 +164,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <ScrollAnimation key={member.name} delay={index * 100}>
-                <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-lift border border-border">
+                <div className="bg-white dark:bg-[#111827] rounded-xl overflow-hidden shadow-lg hover-lift border border-border">
                   <div className="relative h-80 w-full">
                     <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
                   </div>
@@ -177,7 +181,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
+      <section className="py-16 md:py-24 bg-orange-200 dark:bg-[#6D819C]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
@@ -186,7 +190,7 @@ export default function AboutPage() {
                 Reach out today to discuss how we can help bring your digital vision to life.
               </p>
               <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-secondary text-white">
+                <Button size="lg" className="bg-primary dark:bg-[#111827] hover:bg-secondary dark:hover:bg-[#374151] text-white">
                   Get in Touch
                 </Button>
               </Link>

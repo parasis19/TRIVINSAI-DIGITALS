@@ -91,9 +91,9 @@ export default function ServicesPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-neutral-light">
+      <section className="py-20 ">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl bg-orange-200 mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
             <p className="text-neutral-dark text-lg mb-8">
               Comprehensive digital solutions tailored to help your business thrive in the digital landscape.

@@ -10,25 +10,29 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 20)
+  }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const desktopLinkClass = `relative font-medium transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
-    scrolled ? "text-black dark:text-white" : "text-white"
-  }`
+  handleScroll() // <-- Call immediately to set initial scroll position
+  window.addEventListener("scroll", handleScroll)
+  return () => window.removeEventListener("scroll", handleScroll)
+}, [])
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm dark:bg-[#6D819C]/90" : "bg-transparent"
-      }`}
-    >
+    // <header
+    //   className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    //     scrolled ? "bg-white/90 backdrop-blur-md shadow-sm dark:bg-[#6D819C]/90" : "bg-transparent"
+    //   }`}
+    // >
+<header
+  className={`fixed shadow-xl top-0 w-full z-50 transition-all duration-300
+    bg-gradient-to-r from-orange-200/70 via-orange-100/70 to-orange-200/70
+    dark:from-[#1E293B]/70 dark:via-[#334155]/70 dark:to-[#1E293B]/70
+    backdrop-blur-md ${scrolled ? "shadow-sm" : ""}`}
+>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center">
@@ -36,16 +40,17 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className={desktopLinkClass}>Home</Link>
-            <Link href="/services" className={desktopLinkClass}>Services</Link>
-            <Link href="/about" className={desktopLinkClass}>About</Link>
-            <Link href="/templates" className={desktopLinkClass}>Templates</Link>
-            <a href="#contact-section">
-              <Button className="bg-primary text-primary-foreground rounded-full hover:bg-secondary">Contact Us</Button>
-            </a>
-            <ThemeToggle />
-          </nav>
+<nav className="hidden md:flex items-center gap-6">
+  <Link href="/" className="nav-link">Home</Link>
+  <Link href="/services" className="nav-link">Services</Link>
+  <Link href="/about" className="nav-link">About</Link>
+  <Link href="/templates" className="nav-link">Templates</Link>
+  <a href="/contact">
+    <Button className="bg-primary text-primary-foreground rounded-full hover:bg-secondary">Contact Us</Button>
+  </a>
+  <ThemeToggle />
+</nav>
+
 
           {/* Mobile menu button */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
@@ -56,40 +61,40 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <nav className="md:hidden bg-[#111827] border-t animate-fade-in">
+        <nav className="md:hidden dark:bg-[#111827] bg-white border-t animate-fade-in">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
             <ThemeToggle />
             <Link
               href="/"
-              className="block py-2 px-3 text-white hover:bg-[#6D819C] hover:text-accent-foreground rounded-md"
+              className="block py-2 px-3 dark:text-white text-[#111827] dark:hover:bg-[#6D819C] hover:bg-orange-200 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="block py-2 px-3 text-white hover:bg-[#6D819C] hover:text-accent-foreground rounded-md"
+              className="block py-2 px-3 dark:text-white text-[#111827] dark:hover:bg-[#6D819C] hover:bg-orange-200 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
               href="/services"
-              className="block py-2 px-3 text-white hover:bg-[#6D819C] hover:text-accent-foreground rounded-md"
+              className="block py-2 px-3 dark:text-white text-[#111827] dark:hover:bg-[#6D819C] hover:bg-orange-200 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/templates"
-              className="block py-2 px-3 text-white hover:bg-[#6D819C] hover:text-accent-foreground rounded-md"
+              className="block py-2 px-3 dark:text-white text-[#111827] dark:hover:bg-[#6D819C] hover:bg-orange-200 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Templates
             </Link>
             <Link
               href="/faq"
-              className="block py-2 px-3 text-white hover:bg-[#6D819C] hover:text-accent-foreground rounded-md"
+              className="block py-2 px-3 dark:text-white text-[#111827] dark:hover:bg-[#6D819C] hover:bg-orange-200 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               FAQ
