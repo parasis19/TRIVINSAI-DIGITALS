@@ -143,9 +143,11 @@ export const ExampleContent1 = () => (
       <p className="mb-8 text-xl italic text-[#1F2A3C] dark:text-white md:text-2xl">
         Craft your digital presence with us..
       </p>
-      <button className="w-full rounded dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
+      <a href="/services">
+      <button  className="w-full rounded-xl dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
+      </a>
     </div>
   </div>
 )
@@ -163,9 +165,11 @@ export const ExampleContent1 = () => (
 
 
       </p>
-      <button className="w-full rounded dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
+      <a href="/services">
+      <button  className="w-full rounded-xl dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
+      </a>
     </div>
   </div>
   )
@@ -181,9 +185,11 @@ export const ExampleContent1 = () => (
       <p className="mb-8 text-xl italic text-[#1F2A3C] dark:text-white md:text-2xl">
         Maximize reach, boost engagement
       </p>
-      <button className="w-full rounded dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
+      <a href="/services">
+      <button  className="w-full rounded-xl dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
+      </a>
     </div>
   </div>
 );

@@ -39,6 +39,7 @@ export default function ServicesPage() {
                     alt="Website Development"
                     fill
                     className="object-cover"
+                    id="#web"
                   />
                 </div>
               </ScrollAnimation>
@@ -78,9 +79,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <Link href="/contact">
-                    <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
-                  </Link>
+<a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+  <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">
+    Get a Quote
+  </Button>
+</a>
                 </div>
               </ScrollAnimation>
             </div>
@@ -138,9 +141,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <Link href="/contact">
-                    <Button className="bg-primary dark:hover:bg-[#111827] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
-                  </Link>
+<a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+  <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">
+    Get a Quote
+  </Button>
+</a>
                 </div>
               </ScrollAnimation>
             </div>
@@ -155,7 +160,7 @@ export default function ServicesPage() {
             <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden ">
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image src="/services/addC.jpg?height=400&width=600" alt="Ad Creation" fill className="object-cover" />
+                  <Image src="/services/addC.jpg?height=400&width=600" alt="Ad Creation" fill className="object-cover" id="#ads" />
                 </div>
               </ScrollAnimation>
             </div>
@@ -193,9 +198,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <Link href="/contact">
-                    <Button className="bg-primary dark:hover:bg-[#111827] dark:bg-[#6D819C] hover:bg-secondary text-white">Get a Quote</Button>
-                  </Link>
+<a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+  <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">
+    Get a Quote
+  </Button>
+</a>
                 </div>
               </ScrollAnimation>
             </div>

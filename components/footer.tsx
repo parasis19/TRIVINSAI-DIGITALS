@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Mail, PhoneCall , Phone, MapPin, Facebook, PenOff, Instagram, Linkedin } from "lucide-react"
+import { DragCloseDrawerExample } from "../components/DragCloseDrawer"
 
 export default function Footer() {
   return (
@@ -74,20 +75,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/templates" className="text-muted-foreground hover:text-primary transition-colors">
-                  Template Gallery
-                </Link>
-              </li>
-              <li>
                 <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
+
               </li>
+              <DragCloseDrawerExample />
             </ul>
           </div>
 
@@ -131,7 +126,7 @@ export default function Footer() {
       </div>
         <a
         href="tel:+11234567890"
-        className="fixed bottom-6 right-6 dark:bg-[#6D819C] dark:hover:bg-[#39599c] bg-orange-400 hover:bg-orange-600 transition-colors p-4 rounded-full "
+        className="fixed bottom-7 right-7 dark:bg-[#6D819C] dark:hover:bg-[#39599c] bg-orange-400 hover:bg-orange-600 transition-colors p-4 rounded-full "
         aria-label="call us"
       >
         <PhoneCall  className="h-5 w-5 text-white" />
