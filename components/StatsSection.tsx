@@ -7,17 +7,17 @@ const stats = [
   {
     label: "Customers Served",
     target: 3500,
-    icon: <Users className="w-10 h-10 text-orange-500 dark:text-[#a9bfdc]" />,
+    icon: <Users className="w-10 h-10 text-[#FF9500] dark:text-[#a9bfdc]" />,
   },
   {
     label: "Trusted Consumers",
     target: 1200,
-    icon: <ShieldCheck className="w-10 h-10 text-orange-500 dark:hover:text-orange-300 dark:text-[#a9bfdc]" />,
+    icon: <ShieldCheck className="w-10 h-10 text-[#FF9500] dark:hover:text-orange-300 dark:text-[#a9bfdc]" />,
   },
   {
     label: "Projects Completed",
     target: 950,
-    icon: <CheckCircle className="w-10 h-10 text-orange-500 dark:text-[#a9bfdc]" />,
+    icon: <CheckCircle className="w-10 h-10 text-[#FF9500] dark:text-[#a9bfdc]" />,
   },
 ]
 
@@ -80,7 +80,7 @@ export default function StatsSection() {
   return (
     <section
       ref={containerRef}
-      className="py-16 md:py-24 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-[#1E293B] dark:to-[#334155]"
+      className="py-16 md:py-24 bg-gradient-to-b from-orange-50 to-orange-100 dark:from-[#1E293B] dark:to-[#334155]"
     >
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">

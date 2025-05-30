@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
@@ -17,6 +17,9 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],  // Add Poppins here
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -52,10 +55,10 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         trivinsai: {
-          yellow: "#FFD700", // Sunshine yellow
-          orange: "#FF8C00", // Warm orange
-          light: "#FFF9E6", // Soft cream
-          neutral: "#F5F5F5", // Light gray
+          yellow: "#FFD700",
+          orange: "#FF8C00",
+          light: "#FFF9E6",
+          neutral: "#F5F5F5",
         },
       },
       borderRadius: {
@@ -80,6 +83,6 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
 
-export default config
+export default config;

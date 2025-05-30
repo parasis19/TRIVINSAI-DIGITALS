@@ -1,18 +1,17 @@
-import { Inter } from "next/font/google"
-import type React from "react"
+import { Poppins } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import CookieConsent from "@/components/cookie-consent"
+import ClientWrapper from "../components/client-wrapper"
 
-
-const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-poppins" })
 
 export const metadata = {
   title: "TRIVINSAI Digital and Company",
   description: "Digital agency providing website, app, and ad creation services",
-    icons: {
+  icons: {
     icon: "/favicon.ico",
   },
 }
@@ -23,16 +22,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={poppins.variable}>
+      <body className="font-sans">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            
-            
-            <Footer />
-            <CookieConsent />
+            <ClientWrapper>
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <CookieConsent />
+            </ClientWrapper>
           </div>
         </ThemeProvider>
       </body>

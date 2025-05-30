@@ -4,10 +4,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import ScrollAnimation from "@/components/scroll-animation"
 import StatsSection from "@/components/StatsSection"
-import TestimonialsCarousel from "@/components/testimonial-carousel";
 import ServiceCard from "@/components/service-card"
 import TemplatesPreviewSection from "@/components/TemplatesPreviewSection"
-// import ContactSection from "@/components/ContactSection"
+// import FullscreenCarousel from "@/components/fullscreen-carousel"
+import { TextParallaxContentExample } from "../components/TextParallaxContent"
+
 
 
 const services = [
@@ -48,9 +49,13 @@ const services = [
 
 export default function Home() {
   return (
+    
     <div className="flex flex-col min-h-screen">
+      
+      {/* <FullscreenCarousel/> */}
+      <TextParallaxContentExample/>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 light:bg-white  dark:bg-[#111827] md:pt-32 md:pb-24 px-4">
+      {/* <section className="pt-24 pb-16 light:bg-white  dark:bg-[#111827] md:pt-32 md:pb-24 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 space-y-6 animate-slide-in">
@@ -92,8 +97,8 @@ export default function Home() {
              </div>
           </div>
         </div>
-      </section>
-
+      </section> */}
+<TemplatesPreviewSection />
       {/* Services Section */}
       <section  className=" py-16 md:py-24 bg-gradient-to-b from-white to-orange-100 dark:from-[#111827] dark:to-[#334155]">
         <div className="container mx-auto px-4">
@@ -111,30 +116,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-     <TemplatesPreviewSection />
+     
      <StatsSection />
 
 
 
-
-{/* Testimonials Section */}
-{/* Testimonials Section */}
-<section className="py-16 md:py-24 bg-gradient-to-t from-white to-orange-100 dark:from-[#111827] dark:to-[#334155]">
-  <div className="container mx-auto px-4">
-    <ScrollAnimation>
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Don't just take our word for it. Here's what our clients have to say.
-        </p>
-      </div>
-    </ScrollAnimation>
-
-    <ScrollAnimation delay={100}>
-      <TestimonialsCarousel />
-    </ScrollAnimation>
-  </div>
-</section>
 
 
       {/* CTA Section */}
