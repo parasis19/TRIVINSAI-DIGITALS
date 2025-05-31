@@ -69,7 +69,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("fixed inset-x-0 top-8   z-40 w-full ", className)}
+      className={cn("fixed inset-x-0 top-8    z-40 w-full ", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -104,7 +104,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto  hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-6   py-2 lg:flex dark:bg-transparent",
-        visible && "bg-orange-300/40 dark:bg-[#1F2A3C]/40",
+        visible && "bg-orange-300/50   dark:bg-[#1F2A3C]/40",
         className,
       )}
     >
@@ -278,7 +278,7 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "px-4 py-2 rounded-full  button bg-orange-500 text-white dark:text-[#1F2A3C] text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-full  button bg-orange-500 text-white dark:text-white text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
   const variantStyles = {
     primary:

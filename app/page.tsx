@@ -9,6 +9,9 @@ import TemplatesPreviewSection from "@/components/TemplatesPreviewSection"
 // import FullscreenCarousel from "@/components/fullscreen-carousel"
 import { TextParallaxContentExample } from "../components/TextParallaxContent"
 
+ 
+
+
 
 
 const services = [
@@ -53,7 +56,9 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       
       {/* <FullscreenCarousel/> */}
+   
       <TextParallaxContentExample/>
+      
       {/* Hero Section */}
       {/* <section className="pt-24 pb-16 light:bg-white  dark:bg-[#111827] md:pt-32 md:pb-24 px-4">
         <div className="container mx-auto">
@@ -129,7 +134,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl text-[#1F2937] md:text-4xl font-bold mb-6">Ready to Elevate Your Digital Presence?</h2>
-              <p className="text-xl text-[#1F2937] text-muted-foreground mb-8">
+              <p className="text-xl dark:text-white  text-[#1F2937] mb-8">
                 Join the hundreds of businesses that have transformed their digital strategy with TRIVINSAI Digital.
               </p>
               <Link href="/contact">

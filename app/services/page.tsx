@@ -14,7 +14,7 @@ export default function ServicesPage() {
   return (
   <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900 transition-all duration-300 
+      <section className="py-16 bg-gray-50 dark:bg-gray-900 border-b   transition-all duration-300 
     bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
     dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]  md:py-24 ">
         <div className="container mx-auto px-4 text-center">
@@ -28,9 +28,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Website Development Section */}
-      <section id="websites" className="py-16 md:py-24 dark:bg-[#111827]">
+      <section id="websites" className="py-16 md:py-24  dark:bg-[#111827]">
         <div className="container mx-auto px-4 ">
-          <div className="flex flex-col lg:flex-row items-center gap-12 dark:bg-[#111827] ">
+          <div className="flex flex-col lg:flex-row items-center bg-orange-200 gap-12 dark:bg-[#111827] ">
             <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden  ">
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">

@@ -21,8 +21,8 @@ export const DragCloseDrawerExample = () => {
 
       <DragCloseDrawer open={open} setOpen={setOpen}>
         <div className="mx-auto max-w-2xl space-y-4 text-neutral-800 dark:text-neutral-300">
-          <h2 className="text-4xl font-bold text-neutral-900 dark:text-neutral-100">
-            Privacy Policy Summary
+          <h2 className="text-4xl text-center font-bold text-neutral-900 dark:text-neutral-100">
+            Privacy Policy 
           </h2>
           <p>
             At TRIVINSAI Digital and Company, we are committed to protecting your personal information and your right to privacy.
