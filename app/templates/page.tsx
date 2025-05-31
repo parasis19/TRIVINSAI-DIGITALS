@@ -30,10 +30,10 @@ export default function TemplatesPage() {
   })
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 border-t bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-24 bg-gray-50 dark:bg-gray-900  bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]">
+        <div className="container mx-auto px-8">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl lg:text-6xl dark:text-white text-primary font-bold mb-6">Template Gallery</h1>

@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-20">
+<div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-r from-primary/20 to-secondary/20">
         <div className="container mx-auto px-4">

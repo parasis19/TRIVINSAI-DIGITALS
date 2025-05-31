@@ -124,7 +124,7 @@ export default function FAQClientPage() {
   }
 
   return (
-    <div className="pt-20">
+<div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
       <section className="dark:bg-[#6D819C]  py-16 md:py-24 bg-primary/20 ">
         <div className="container mx-auto px-4">

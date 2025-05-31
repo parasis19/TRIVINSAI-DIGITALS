@@ -38,9 +38,9 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="pt-20">
+  <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
-      <section className="py-16 md:py-24  bg-gray-50 dark:bg-gray-900 border-t transition-all duration-300 
+      <section className="py-16 md:py-24  bg-gray-50 dark:bg-gray-900   transition-all duration-300 
     bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
     dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
         <div className="container mx-auto px-4">
