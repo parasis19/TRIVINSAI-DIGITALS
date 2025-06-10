@@ -226,6 +226,8 @@ export const MobileNavMenu = ({
           <button
             className="absolute top-4 right-4 z-50 text-black dark:text-white"
             onClick={onClose}
+            aria-label="Close menu"
+            title="Close menu"
           >
             <IconX size={24} />
           </button>
