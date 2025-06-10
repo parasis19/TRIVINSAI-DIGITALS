@@ -10,7 +10,7 @@ const contactMethods = [
     title: "WhatsApp Chat",
     description: "Quickly reach us via WhatsApp for instant support and queries.",
     icon: FaWhatsapp,
-    link: "https://wa.me/+919167885997",
+    link: "https://wa.me/+918104880343",
     target: "_blank",
     color: "text-primary",
     buttonLabel: "Start Chat",
