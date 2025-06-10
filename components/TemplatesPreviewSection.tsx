@@ -22,7 +22,7 @@ export default function TemplatesPreviewSection() {
   const previewTemplates = templates.slice(0, 8)
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-orange-100 to-orange-200 dark:from-[#334155] dark:to-[#1E293B]">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-orange-200 to-orange-200 dark:from-[#334155] dark:to-[#1E293B]">
       <div className="container mx-auto px-4">
         {/* Heading Section */}
         <div className="max-w-4xl mx-auto mb-12 text-center px-4">
@@ -39,7 +39,7 @@ export default function TemplatesPreviewSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {previewTemplates.map((template, index) => {
             const categoryName = categories.find((c) => c.id === template.category)?.name || "General"
-            const emailHref = `mailto:hello@example.com?subject=Using Template: ${template.title}&body=Hi,%0D%0A%0D%0AI would like to use the "${template.title}" template from the "${categoryName}" category.%0D%0A%0D%0AThank you.`
+            const emailHref = `mailto:marketing@trivinsai.com?subject=Using Template: ${template.title}&body=Hi,%0D%0A%0D%0AI would like to use the "${template.title}" template from the "${categoryName}" category.%0D%0A%0D%0AThank you.`
 
             return (
               <ScrollAnimation key={template.id} delay={(index % 4) * 100}>

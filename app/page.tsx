@@ -8,6 +8,7 @@ import ServiceCard from "@/components/service-card"
 import TemplatesPreviewSection from "@/components/TemplatesPreviewSection"
 // import FullscreenCarousel from "@/components/fullscreen-carousel"
 import { TextParallaxContentExample } from "../components/TextParallaxContent"
+import ParallaxSection from "../components/ParallaxExample"
 
  
 
@@ -103,6 +104,25 @@ export default function Home() {
           </div>
         </div>
       </section> */}
+            <section className="relative z-10  text-center">
+      
+
+      {/* Parallax Section */}
+      {/* <div className="relative h-[500px] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-fixed  bg-center bg-cover"
+          style={{ backgroundImage: "url('/images/template.png')" }}
+        />
+        <div className="absolute inset-0 bg-orange-500/10 dark:bg-black/70 backdrop-blur-lg dark:backdrop-blur-sm" />
+        <div className="relative z-10 flex h-full items-center justify-center">
+          <h1 className="text-5xl text-[#111827] dark:text-white font-bold drop-shadow-lg">Our TEMPLATES</h1>
+        </div>
+      </div> */}
+
+      {/* Section Below */}
+      
+      </section>
+
 <TemplatesPreviewSection />
       {/* Services Section */}
       <section  className=" py-16 md:py-24 bg-gradient-to-b from-white to-orange-100 dark:from-[#111827] dark:to-[#334155]">
@@ -123,13 +143,14 @@ export default function Home() {
       </section>
      
      <StatsSection />
+     <ParallaxSection/>
 
 
 
 
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 light: dark:bg-[#6D819C] from- bg-orange-200    ">
+      {/* <section className="py-16 md:py-24 light: dark:bg-[#6D819C] from- bg-orange-200    ">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
@@ -146,7 +167,7 @@ export default function Home() {
             </div>
           </ScrollAnimation>
         </div>
-      </section>
+      </section> */}
       
 
 

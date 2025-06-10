@@ -4,9 +4,9 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export const TextParallaxContentExample = () => {
   return (
-    <div className="bg-gradient-to-b dark:from-[#1F2A3C] dark:to-[#111827]   from-orange-100 to-[#FFFFFE] ">
+    <div className="bg-gradient-to-b dark:from-[#1F2A3C] dark:to-[#111827]   from-[#ffebd4] to-[#ffecd7] ">
       <TextParallaxContent
-        imgUrl="/carousel/slide4.jpg"
+        imgUrl="/carousel/webs.jpg"
         subheading="Web Development"
         heading="Build. Launch. Convert."
       >
@@ -144,7 +144,7 @@ export const ExampleContent1 = () => (
         Craft your digital presence with us..
       </p>
       <a href="/services">
-      <button  className="w-full rounded-xl dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
+        <button  className="w-full rounded-xl dark:bg-orange-400 dark:hover:bg-orange-600 px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600  md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
       </a>
@@ -166,7 +166,7 @@ export const ExampleContent1 = () => (
 
       </p>
       <a href="/services">
-      <button  className="w-full rounded-xl dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
+      <button  className="w-full rounded-xl dark:bg-orange-400 dark:hover:bg-orange-600 px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600  md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
       </a>
@@ -186,7 +186,7 @@ export const ExampleContent1 = () => (
         Maximize reach, boost engagement
       </p>
       <a href="/services">
-      <button  className="w-full rounded-xl dark:bg-[#6D819C] px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600 dark:hover:hover:bg-neutral-700 md:w-fit">
+      <button  className="w-full rounded-xl dark:bg-orange-400 dark:hover:bg-orange-600 px-9 py-4 text-xl text-white transition-colors bg-primary hover:bg-orange-600  md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
       </a>

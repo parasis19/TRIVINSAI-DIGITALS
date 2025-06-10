@@ -60,7 +60,13 @@ export const DragCloseDrawerExample = () => {
   );
 };
 
-const DragCloseDrawer = ({ open, setOpen, children }) => {
+interface DragCloseDrawerProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  children: React.ReactNode;
+}
+
+const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
   const [scope, animate] = useAnimate();
   const [drawerRef, { height }] = useMeasure();
 

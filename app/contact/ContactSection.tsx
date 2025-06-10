@@ -60,7 +60,7 @@ function TrustedByCustomers() {
       aria-label="Trusted by customers statistics"
     >
       <div className="container mx-auto px-4 text-center max-w-6xl">
-        <h2 className="text-4xl font-bold mb-12 text-primary">Trusted by Customers</h2>
+        <h2 className="text-4xl font-bold mb-12 dark:text-white  text-[#1E293B] ">Trusted by Customers</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {trustedStats.map(({ icon: Icon, label, value }, idx) => (
             <motion.div
@@ -71,8 +71,8 @@ function TrustedByCustomers() {
               transition={{ delay: idx * 0.2, duration: 0.6 }}
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center justify-center"
             >
-              <Icon className="text-primary dark:text-orange-400 h-12 w-12 mb-4" />
-              <p className="text-5xl font-extrabold text-primary dark:text-orange-400 mb-2">{value.toLocaleString()}</p>
+              <Icon className="text-primary dark:hover:text-orange-200 dark:text-white h-12 w-12 mb-4" />
+              <p className="text-5xl font-extrabold text-primary dark:hover:text-orange-200 dark:text-white mb-2">{value.toLocaleString()}</p>
               <p className="text-lg font-medium text-muted-foreground dark:text-gray-300">{label}</p>
             </motion.div>
           ))}
@@ -85,14 +85,14 @@ function TrustedByCustomers() {
 export default function ContactSection() {
   return (
     
- <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
+ <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1e293b] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900 transition-all duration-300 
         bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
         dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-primary max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl dark:text-white text-[#1E293B]  font-bold mb-6">Contact Us</h1>
+          <p className="text-xl dark:text-white text-[#1E293B] max-w-3xl mx-auto">
             Get in Touch with a call, Email, and a Whatsapp chats.
           </p>
         </div>

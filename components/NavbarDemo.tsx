@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/theme-toggle";
 import Link from "next/link";
 import clsx from "clsx";
+ 
 
 export function NavbarDemo() {
   const navItems = [
@@ -55,7 +56,7 @@ export function NavbarDemo() {
               <ThemeToggle />
             </NavbarButton>
             <Link href="/templates">
-              <NavbarButton variant="primary">Templates</NavbarButton>
+              <NavbarButton className="bg-orange-400">Templates</NavbarButton>
             </Link>
           </div>
         </NavBody>
@@ -69,11 +70,14 @@ export function NavbarDemo() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             />
           </MobileNavHeader>
+           
 
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
           >
+            
+            <ThemeToggle/>
             {navItems.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
@@ -90,15 +94,9 @@ export function NavbarDemo() {
                 variant="primary"
                 className="w-full"
               >
-                Login
+                Templates
               </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
+ 
             </div>
           </MobileNavMenu>
         </MobileNav>

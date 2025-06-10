@@ -15,25 +15,25 @@ export default function AboutPage() {
       name: "John Davis",
       role: "Founder & CEO",
       bio: "With over 15 years in digital strategy and web development, John leads TRIVINSAI Digital with vision and expertise.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/ppl/c1.png?height=300&width=300",
     },
     {
-      name: "Sarah Chen",
+      name: "Saran Johnson",
       role: "Creative Director",
       bio: "Sarah brings 10+ years of design experience, crafting beautiful, user-centered interfaces for our clients.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/ppl/c2.png?height=300&width=300",
     },
     {
       name: "Michael Rodriguez",
       role: "Lead Developer",
       bio: "Michael specializes in cutting-edge web technologies, ensuring our projects are built with the best practices.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/ppl/c3-2.png?height=300&width=300",
     },
     {
       name: "Emma Thompson",
       role: "Marketing Strategist",
       bio: "Emma develops data-driven marketing strategies that deliver measurable results for our clients.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/ppl/c4.png?height=300&width=300",
     },
   ]
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
   <ScrollAnimation>
     <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full rounded-lg overflow-hidden">
       <Image
-        src="/placeholder.svg?height=400&width=600"
+        src="/ppl/us.png?height=400&width=600"
         alt="About TRIVINSAI Digital"
         fill
         className="object-cover"
@@ -112,7 +112,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl text-[#111827] dark:text-white font-bold mb-4">Our Story</h2>
             </div>
           </ScrollAnimation>
 
@@ -120,26 +120,26 @@ export default function AboutPage() {
             <div className="w-full lg:w-1/2 sm:w-full mt-6 lg:mt-0">
               <ScrollAnimation>
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image src="/placeholder.svg?height=400&width=600" alt="Our Story" fill className="object-cover" />
+                  <Image src="/carousel/slide4.jpg?height=400&width=600" alt="Our Story" fill className="object-cover" />
                 </div>
               </ScrollAnimation>
             </div>
             <div className="lg:w-1/2 space-y-6">
               <ScrollAnimation>
-                <p className="text-lg text-muted-foreground">
-                  TRIVINSAI Digital was founded in 2015 with a simple yet powerful idea: to help businesses harness the
+                <p className="text-lg dark:text-white text-[#111827]">
+                  TRIVINSAI Digital was founded in 2024 with a simple yet powerful idea: to help businesses harness the
                   power of digital technology to reach their full potential.
                 </p>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg dark:text-white text-[#111827]">
                   What started as a small team of passionate digital experts has grown into a comprehensive digital
                   agency with a diverse team of developers, designers, and marketers.
                 </p>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg dark:text-white text-[#111827]">
                   Over the years, we've had the privilege of working with businesses of all sizes, from startups to
                   established enterprises, helping them transform their digital presence and achieve their business
                   goals.
                 </p>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg dark:text-white text-[#111827]">
                   Today, we continue to evolve and innovate, staying ahead of digital trends to provide our clients with
                   cutting-edge solutions that drive real business results.
                 </p>
@@ -186,7 +186,7 @@ export default function AboutPage() {
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Want to Work With Us?</h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl dark:text-white text-[#111827] mb-8">
                 Reach out today to discuss how we can help bring your digital vision to life.
               </p>
               <Link href="/contact">

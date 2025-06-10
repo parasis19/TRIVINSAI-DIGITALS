@@ -30,14 +30,14 @@ export default function TemplatesPage() {
   })
 
   return (
-    <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
+    <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-50 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
-      <section className="py-20 md:py-24 bg-gray-50 dark:bg-gray-900  bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]">
+      <section className="py-20 md:py-24 bg-gray-50 dark:bg-gray-900  bg-gradient-to-r from-orange-200 via-orange-50 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]">
         <div className="container mx-auto px-8">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl dark:text-white text-primary font-bold mb-6">Template Gallery</h1>
-              <p className="text-xl text-primary dark:text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl dark:text-white text-[#111827] font-bold mb-6">Template Gallery</h1>
+              <p className="text-xl dark:text-white text-[#111827]">
                 Browse our collection of professionally designed templates for your next project.
               </p>
             </div>
@@ -45,24 +45,22 @@ export default function TemplatesPage() {
         </div>
       </section>
 
-      {/* Filter Section with Search and Category Tabs */}
+      {/* Filter Section */}
       <section className="py-8 border-b bg-orange-100 dark:bg-[#111827]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            {/* Search Input */}
             <div className="w-full md:w-auto flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+              <Search className="absolute text-white dark:text-[#111827] left-3 top-1/2 transform -translate-y-1/2 h-5 w-5" />
               <Input
                 type="text"
                 placeholder="Search templates..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
+                className="pl-10 bg-orange-100 dark:bg-[#5d6f98] dark:text-white text-[#111827]"
               />
             </div>
           </div>
 
-          {/* Category Tabs */}
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             {categories.map((category) => {
               const isActive = categoryFilter === category.id
@@ -108,8 +106,10 @@ export default function TemplatesPage() {
                         </div>
                         <div className="p-4">
                           <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-semibold">{template.title}</h3>
-                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                            <h3 className="text-base font-normal text-gray-900 dark:text-white truncate">
+                              {template.title}
+                            </h3>
+                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full whitespace-nowrap">
                               {categories.find((c) => c.id === template.category)?.name}
                             </span>
                           </div>
@@ -166,7 +166,9 @@ export default function TemplatesPage() {
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl dark:text-white font-bold mb-6">Need a Custom Solution?</h2>
+              <h2 className="text-3xl md:text-4xl dark:text-white font-bold mb-6">
+                Need a Custom Solution?
+              </h2>
               <p className="text-xl text-muted-foreground dark:text-white mb-8">
                 Can't find what you're looking for? We can create a custom design tailored to your specific needs.
               </p>

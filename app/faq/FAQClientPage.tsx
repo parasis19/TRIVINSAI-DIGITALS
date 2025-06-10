@@ -126,12 +126,12 @@ export default function FAQClientPage() {
   return (
 <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
-      <section className="dark:bg-[#6D819C]  py-16 md:py-24 bg-primary/20 ">
+      <section className="bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]  py-16 md:py-24   ">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl text-[#111827] md:text-5xl lg:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
-              <p className="text-xl text-muted-foreground text-[#111827]   ">
+              <h1 className="text-4xl text-[#111827] dark:text-white md:text-5xl lg:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
+              <p className="text-xl text-muted-foreground text-[#111827] dark:text-white   ">
                 Find answers to common questions about our services, process, and more.
               </p>
             </div>
@@ -190,7 +190,7 @@ export default function FAQClientPage() {
           <ScrollAnimation>
             <div className="text-center text-[#111827] max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl text-[#111827] font-bold mb-6">Still Have Questions?</h2>
-              <p className="text-xl text-[#111827] text-muted-foreground mb-8">
+              <p className="text-xl text-[#111827] dark:text-white text-muted-foreground mb-8">
                 Can't find the answer you're looking for? Contact our team for personalized assistance.
               </p>
               <Link href="/contact">
