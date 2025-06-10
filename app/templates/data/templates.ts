@@ -91,11 +91,11 @@ export const templates: Template[] = [
   },
   {
     id: "template-10",
-    title: "Portfolio Showcase",
+    title: "Trivinsai  @2",
     category: "portfolio",
-    image: "/templates/t10.png",
+    image: "/templates/t2.png",
     description: "A showcase portfolio template for creative professionals.",
-    previewUrl: "https://yourdomain.com/templates/template-4",
+    previewUrl: "https://trivinsai-design.netlify.app/#",
   },
   {
     id: "template-11",
