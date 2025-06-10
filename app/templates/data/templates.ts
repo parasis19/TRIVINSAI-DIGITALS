@@ -31,7 +31,7 @@ export const templates: Template[] = [
     category: "portfolio",
     image: "/templates/sujaya.png",
     description: "A bold portfolio template for showcasing creative work.",
-    previewUrl: "https://sujaya-boards.vercel.app/p",
+    previewUrl: "https://sujaya-boards.vercel.app/",
   },
   {
     id: "template-3",
