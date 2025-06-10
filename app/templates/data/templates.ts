@@ -31,7 +31,7 @@ export const templates: Template[] = [
     category: "portfolio",
     image: "/templates/sujaya.png",
     description: "A bold portfolio template for showcasing creative work.",
-    previewUrl: "https://yourdomain.com/templates/template-2",
+    previewUrl: "https://sujaya-boards.vercel.app/p",
   },
   {
     id: "template-3",
@@ -47,7 +47,7 @@ export const templates: Template[] = [
     category: "ecommerce",
     image: "/templates/pqc.png",
     description: "An eCommerce template with a clean, modern design.",
-    previewUrl: "https://yourdomain.com/templates/template-4",
+    previewUrl: "https://print-qc-55uv.vercel.app/",
   },
   {
     id: "template-5",
@@ -55,7 +55,7 @@ export const templates: Template[] = [
     category: "portfolio",
     image: "/templates/parshwa.png",
     description: "A minimalistic portfolio template for designers.",
-    previewUrl: "https://yourdomain.com/templates/template-4",
+    previewUrl: "https://parshwa-plastic.vercel.app/",
   },
   {
     id: "template-6",
@@ -63,7 +63,7 @@ export const templates: Template[] = [
     category: "landing",
     image: "/templates/paper.png",
     description: "A professional landing page template with advanced features.",
-    previewUrl: "https://yourdomain.com/templates/template-4",
+    previewUrl: "https://board-paper-website.vercel.app/",
   },
   {
     id: "template-7",
@@ -71,7 +71,7 @@ export const templates: Template[] = [
     category: "blog",
     image: "/templates/ns.png",
     description: "A masterfully crafted blog template with elegant design.",
-    previewUrl: "https://yourdomain.com/templates/template-4",
+    previewUrl: "https://n-s-industries-5t1e.vercel.app/",
   },
   {
     id: "template-8",
@@ -79,7 +79,7 @@ export const templates: Template[] = [
     category: "business",
     image: "/templates/dev.png",
     description: "A hub for all your business needs with a modern interface.",
-    previewUrl: "https://yourdomain.com/templates/template-4",
+    previewUrl: "https://devpriya.vercel.app/",
   },
   {
     id: "template-9",
@@ -87,7 +87,7 @@ export const templates: Template[] = [
     category: "ecommerce",
     image: "/templates/brainwave.png",
     description: "An advanced eCommerce template with multiple features.",
-    previewUrl: "https://yourdomain.com/templates/template-4",
+    previewUrl: "https://brainwave-ai-hub.netlify.app/",
   },
   {
     id: "template-10",
