@@ -69,7 +69,7 @@
       <motion.div
         ref={ref}
         // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-        className={cn("fixed inset-x-0 top-8  rounded-2xl  z-40 w-full ", className)}
+        className={cn("fixed inset-x-0 top-8    z-40 w-full ", className)}
       >
         {React.Children.map(children, (child) =>
           React.isValidElement(child)
@@ -226,8 +226,6 @@ export const MobileNavMenu = ({
           <button
             className="absolute top-4 right-4 z-50 text-black dark:text-white"
             onClick={onClose}
-            title="Close menu"
-            aria-label="Close menu"
           >
             <IconX size={24} />
           </button>

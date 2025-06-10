@@ -89,6 +89,7 @@ export function NavbarDemo() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+              <Link href="/templates">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
@@ -96,6 +97,7 @@ export function NavbarDemo() {
               >
                 Templates
               </NavbarButton>
+              </Link>
  
             </div>
           </MobileNavMenu>
