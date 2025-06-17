@@ -5,6 +5,9 @@ import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import CookieConsent from "@/components/cookie-consent"
 import { NavbarDemo } from "@/components/NavbarDemo"
+// import HoverDropdownNavbar from "@/components/HoverDropdownNavbar"
+// import  {SmoothScrollHero } from "@/components/SmoothScrollHero"
+
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-poppins" })
 
@@ -28,7 +31,11 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
              
               {/* <Navbar /> */}
+             
+              
+
               <NavbarDemo/>
+              
               <main className="flex-1">{children}</main>
               <Footer />
               <CookieConsent />

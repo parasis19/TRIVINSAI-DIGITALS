@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Navbar,
   NavBody,
@@ -14,7 +15,6 @@ import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/theme-toggle";
 import Link from "next/link";
 import clsx from "clsx";
- 
 
 export function NavbarDemo() {
   const navItems = [
@@ -25,10 +25,29 @@ export function NavbarDemo() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const heroThreshold = 300; // adjust based on your hero height
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentY = window.scrollY;
+
+      setIsScrolled(currentY > 10);
+
+      if (currentY > heroThreshold) {
+        if (currentY > lastScrollY) {
+          setShowNavbar(false); // scroll down
+        } else {
+          setShowNavbar(true); // scroll up
+        }
+      } else {
+        // Always show navbar within hero section
+        setShowNavbar(true);
+      }
+
+      lastScrollY = currentY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,60 +55,64 @@ export function NavbarDemo() {
   }, []);
 
   return (
-    <div className="relative w-full">
-      <Navbar className={clsx("transition-colors duration-300", {
-        "    text-[#111827]": isScrolled,
-        "bg-transparent text-white": !isScrolled,
-      })}>
-        {/* Desktop Navigation */}
-        <NavBody>
+<Navbar
+  className={clsx(
+    "fixed top-0 z-50 w-full transition-transform duration-300 ease-in-out",
+    {
+      "translate-y-0": showNavbar,
+      "-translate-y-full": !showNavbar,
+      "  text-[#111827] ": isScrolled && showNavbar,
+      "bg-transparent text-white": !isScrolled,
+    }
+  )}
+>
+      {/* Desktop Navigation */}
+      <NavBody>
+        <NavbarLogo />
+        <NavItems
+          items={navItems}
+          className={clsx({
+            "text-black": isScrolled,
+            "text-white": !isScrolled,
+          })}
+        />
+        <div className="flex items-center gap-4">
+          <NavbarButton variant="secondary">
+            <ThemeToggle />
+          </NavbarButton>
+          <Link href="/templates">
+            <NavbarButton className="bg-orange-400">Templates</NavbarButton>
+          </Link>
+        </div>
+      </NavBody>
+
+      {/* Mobile Navigation */}
+      <MobileNav>
+        <MobileNavHeader>
           <NavbarLogo />
-          <NavItems
-            items={navItems}
-            className={clsx({
-              "text-black": isScrolled,
-              "text-white": !isScrolled,
-            })}
-          />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">
-              <ThemeToggle />
-            </NavbarButton>
-            <Link href="/templates">
-              <NavbarButton className="bg-orange-400">Templates</NavbarButton>
-            </Link>
-          </div>
-        </NavBody>
-
-        {/* Mobile Navigation */}
-        <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
-           
-
-          <MobileNavMenu
+          <MobileNavToggle
             isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
-            
-            <ThemeToggle/>
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
-              </a>
-            ))}
-            <div className="flex w-full flex-col gap-4">
-              <Link href="/templates">
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          />
+        </MobileNavHeader>
+
+        <MobileNavMenu
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+        >
+          <ThemeToggle />
+          {navItems.map((item, idx) => (
+            <a
+              key={`mobile-link-${idx}`}
+              href={item.link}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative text-neutral-600 dark:text-neutral-300"
+            >
+              <span className="block">{item.name}</span>
+            </a>
+          ))}
+          <div className="flex w-full flex-col gap-4">
+            <Link href="/templates">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
@@ -97,22 +120,10 @@ export function NavbarDemo() {
               >
                 Templates
               </NavbarButton>
-              </Link>
- 
-            </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar>
-
-      <DummyContent />
-    </div>
+            </Link>
+          </div>
+        </MobileNavMenu>
+      </MobileNav>
+    </Navbar>
   );
 }
-
-const DummyContent = () => {
-  return (
-    <div className="  bg-orange-100 dark:bg-[#1F2A3C]">
-        
-    </div>
-  );
-};

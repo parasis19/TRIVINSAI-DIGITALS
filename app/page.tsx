@@ -7,8 +7,10 @@ import StatsSection from "@/components/StatsSection"
 import ServiceCard from "@/components/service-card"
 import TemplatesPreviewSection from "@/components/TemplatesPreviewSection"
 // import FullscreenCarousel from "@/components/fullscreen-carousel"
-import { TextParallaxContentExample } from "../components/TextParallaxContent"
+// import { TextParallaxContentExample } from "../components/TextParallaxContent"
 import ParallaxSection from "../components/ParallaxExample"
+// import { SmoothScrollHero }  from "@/components/SmoothScrollHero"
+import { ThreeDMarqueeDemoSecond } from "@/components/ThreeDMarqueeDemoSecond"
 
  
 
@@ -57,8 +59,9 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       
       {/* <FullscreenCarousel/> */}
-   
-      <TextParallaxContentExample/>
+      {/* <SmoothScrollHero/> */}
+      <ThreeDMarqueeDemoSecond/>
+      {/* <TextParallaxContentExample/> */}
       
       {/* Hero Section */}
       {/* <section className="pt-24 pb-16 light:bg-white  dark:bg-[#111827] md:pt-32 md:pb-24 px-4">
