@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaUsers, FaStar, FaProjectDiagram } from "react-icons/fa";
+ 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion"
 

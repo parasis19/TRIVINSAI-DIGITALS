@@ -4,7 +4,7 @@ import { DragCloseDrawerExample } from "../components/DragCloseDrawer"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 border-t transition-all duration-300 
+    <footer className="bg-gray-50 dark:bg-gray-900  transition-all duration-300 
     bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
     dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] 
     ">
@@ -91,7 +91,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">123 Digital Avenue, Tech City, TC 12345</span>
+                <span className="text-muted-foreground">Ratna mahal tower, matunga, mumbai</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-primary mr-2 flex-shrink-0" />

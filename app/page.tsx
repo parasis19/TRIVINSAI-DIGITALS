@@ -6,11 +6,13 @@ import ScrollAnimation from "@/components/scroll-animation"
 import StatsSection from "@/components/StatsSection"
 import ServiceCard from "@/components/service-card"
 import TemplatesPreviewSection from "@/components/TemplatesPreviewSection"
-// import FullscreenCarousel from "@/components/fullscreen-carousel"
+import FullscreenCarousel from "@/components/fullscreen-carousel"
 // import { TextParallaxContentExample } from "../components/TextParallaxContent"
 import ParallaxSection from "../components/ParallaxExample"
 // import { SmoothScrollHero }  from "@/components/SmoothScrollHero"
-import { ThreeDMarqueeDemoSecond } from "@/components/ThreeDMarqueeDemoSecond"
+
+import { FlipWordsDemo} from "@/components/FlipWordsDemo"
+import { HeroScrollDemo } from "@/components/HeroScrollDemo"
 
  
 
@@ -58,9 +60,15 @@ export default function Home() {
     
     <div className="flex flex-col min-h-screen">
       
-      {/* <FullscreenCarousel/> */}
+     <div className="bg-orange-200 dark:bg-[#1F2A3C]">
+  <FullscreenCarousel />
+     </div>
       {/* <SmoothScrollHero/> */}
-      <ThreeDMarqueeDemoSecond/>
+      <div className="bg-orange-200 dark:bg-[#1F2A3C]">
+      <HeroScrollDemo/>
+      </div>
+      
+
       {/* <TextParallaxContentExample/> */}
       
       {/* Hero Section */}
@@ -125,8 +133,9 @@ export default function Home() {
       {/* Section Below */}
       
       </section>
-
+  
 <TemplatesPreviewSection />
+<FlipWordsDemo/>
       {/* Services Section */}
       <section  className=" py-16 md:py-24 bg-gradient-to-b from-white to-orange-100 dark:from-[#111827] dark:to-[#334155]">
         <div className="container mx-auto px-4">
@@ -144,9 +153,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
      
      <StatsSection />
+     <div className=" bg-gradient-to-t from-orange-50 to-orange-100 dark:from-[#1E293B] dark:to-[#334155]">
      <ParallaxSection/>
+     </div>
+     
 
 
 
