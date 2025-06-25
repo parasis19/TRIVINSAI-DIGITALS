@@ -14,9 +14,9 @@ export const DragCloseDrawerExample = () => {
     <div className="place-content-center">
       <a
         onClick={() => setOpen(true)}
-        className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+        className="text-[#1e293b] hover:text-[#169ed9] transition-colors cursor-pointer"
       >
-        privacy policy
+        Privacy policy
       </a>
 
       <DragCloseDrawer open={open} setOpen={setOpen}>

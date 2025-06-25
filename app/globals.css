@@ -22,7 +22,12 @@
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 20 5.9% 90%;
     --input: 20 5.9% 90%;
-    --ring: 35 100% 50%; /* Sunshine yellow */
+    --ring: 35 100% 50%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
 
@@ -33,30 +38,59 @@
     --card-foreground: 60 9.1% 97.8%;
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
-    --primary: 35 100% 50%; /* Sunshine yellow */
+    --primary: 35 100% 50%;
     --primary-foreground: 60 9.1% 97.8%;
-    --secondary: 25 95% 53%; /* Warm orange */
+    --secondary: 25 95% 53%;
     --secondary-foreground: 60 9.1% 97.8%;
     --muted: 12 6.5% 15.1%;
     --muted-foreground: 24 5.4% 63.9%;
-    --accent: 35 77% 92%; /* Soft yellow */
+    --accent: 35 77% 92%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 12 6.5% 15.1%;
     --input: 12 6.5% 15.1%;
-    --ring: 35 100% 50%; /* Sunshine yellow */
+    --ring: 35 100% 50%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+@layer utilities {
+  .nav-link {
+    @apply relative inline-block text-[#111827] dark:text-white;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .animate-on-scroll {
@@ -106,27 +140,29 @@
   animation: slideInFromBottom 0.5s ease forwards;
 }
 
-@layer utilities {
-  .nav-link {
-    @apply relative inline-block text-[#111827] dark:text-white;
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
   }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    left: 0;
-    bottom: -2px;
-    background-color: currentColor;
-    transition: width 0.3s ease;
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
   }
-
-  .nav-link:hover::after {
-    width: 100%;
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
   }
 }
 
-html {
-  scroll-behavior: smooth;
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }

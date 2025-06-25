@@ -104,7 +104,7 @@
         }}
         className={cn(
           "relative z-[60] mx-auto  hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-6   py-2 lg:flex dark:bg-transparent",
-          visible && "bg-orange-300/50   dark:bg-[#6B7F99]/30",
+          visible && " bg-white dark:bg-white ",
           className,
         )}
       >
@@ -113,48 +113,48 @@
     );
   };
 
-  export const NavItems = ({
-    items,
-    className,
-    onItemClick,
-    visible,
-  }: NavItemsProps & { visible?: boolean }) => {
-    const [hovered, setHovered] = useState<number | null>(null);
+ export const NavItems = ({
+  items,
+  className,
+  onItemClick,
+  visible,
+}: NavItemsProps & { visible?: boolean }) => {
+  const [hovered, setHovered] = useState<number | null>(null);
 
-    return (
-      <motion.div
-        onMouseLeave={() => setHovered(null)}
-        className={cn(
-          "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition-colors duration-300 lg:flex lg:space-x-2",
-          visible
-            ? "text-[#1F2A3C] dark:text-white"
-            : "text-white dark:text-white",
-          className
-        )}
-      >
-        {items.map((item, idx) => (
-          <a
-            key={`link-${idx}`}
-            href={item.link}
-            onMouseEnter={() => setHovered(idx)}
-            onClick={onItemClick}
-            className="relative px-4 py-2"
-          >
-            {hovered === idx && (
-              <motion.div
-                layoutId="hovered"
-                className={cn(
-                  "absolute inset-0 h-full w-full rounded-full",
-                  visible ? "bg-orange-400 dark:bg-white" : "bg-orange-500/90 dark:bg-white/30",
-                )}
-              />
-            )}
-            <span className="relative z-20">{item.name}</span>
-          </a>
-        ))}
-      </motion.div>
-    );
-  };
+  return (
+    <motion.div
+      onMouseLeave={() => setHovered(null)}
+      className={cn(
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition-colors duration-300 lg:flex lg:space-x-2",
+        visible
+          ? "text-[#1F2A3C]" // on scroll: both light and dark will get this
+          : "text-white",     // top of page: both light and dark will be white
+        className
+      )}
+    >
+      {items.map((item, idx) => (
+        <a
+          key={`link-${idx}`}
+          href={item.link}
+          onMouseEnter={() => setHovered(idx)}
+          onClick={onItemClick}
+          className="relative px-4 py-2"
+        >
+          {hovered === idx && (
+            <motion.div
+              layoutId="hovered"
+              className={cn(
+                "absolute inset-0 h-full w-full rounded-full",
+                visible ? "bg-[#009fd9]" : "bg-[#009fd9]/60",
+              )}
+            />
+          )}
+          <span className="relative z-20">{item.name}</span>
+        </a>
+      ))}
+    </motion.div>
+  );
+};
 
 
 
@@ -179,7 +179,7 @@
         }}
         className={cn(
           "relative z-50 mx-auto rounded-full flex w-full max-w-[calc(90vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-4 lg:hidden",
-          visible && "bg-orange-100/80 dark:bg-[#1F2A3C]/80 ",
+          visible && "bg-white dark:bg-white ",
           className,
         )}
       >
@@ -224,7 +224,7 @@ export const MobileNavMenu = ({
         >
           {/* Close Button */}
           <button
-            className="absolute top-4 right-4 z-50 text-black dark:text-white"
+            className="absolute top-4 right-4 z-50 text-white"
             onClick={onClose}
             aria-label="Close menu"
             title="Close menu"
@@ -249,7 +249,7 @@ export const MobileNavMenu = ({
     return isOpen ? (
       <IconX className="text-black dark:text-white" onClick={onClick} />
     ) : (
-      <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+      <IconMenu2 className="text-black dark:text-[#1F2A3C]" onClick={onClick} />
     );
   };
 
@@ -262,8 +262,8 @@ export const MobileNavMenu = ({
         <img
           src="/logos/Trivinsai.png"
           alt="logo"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
         />
         
       </a>

@@ -22,7 +22,7 @@ export default function ParallaxSection() {
           Join the hundreds of businesses that have transformed their digital strategy with TRIVINSAI Digital.
         </p>
         <Link href="/contact">
-          <Button size="lg" className="dark:bg-[#1F2937] hover:bg-secondary text-white">
+          <Button size="lg" className="bg-[#0d597d] hover:bg-[#169ed9] text-white">
             Get Started Today
           </Button>
         </Link>

@@ -12,7 +12,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useEffect, useState } from "react";
-import ThemeToggle from "@/components/theme-toggle";
+
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -78,10 +78,10 @@ export function NavbarDemo() {
         />
         <div className="flex items-center gap-4">
           <NavbarButton variant="secondary">
-            <ThemeToggle />
+            
           </NavbarButton>
           <Link href="/templates">
-            <NavbarButton className="bg-orange-400">Templates</NavbarButton>
+            <NavbarButton className="bg-[#0d597d] hover:bg-[#009fd9]">Templates</NavbarButton>
           </Link>
         </div>
       </NavBody>
@@ -100,7 +100,7 @@ export function NavbarDemo() {
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
         >
-          <ThemeToggle />
+          
           {navItems.map((item, idx) => (
             <a
               key={`mobile-link-${idx}`}

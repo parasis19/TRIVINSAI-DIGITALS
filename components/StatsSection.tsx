@@ -7,17 +7,17 @@ const stats = [
   {
     label: "Customers Served",
     target: 3500,
-    icon: <Users className="w-10 h-10 text-[#FF9500] dark:text-[#a9bfdc]" />,
+    icon: <Users className="w-10 h-10 text-[#169ed9]" />,
   },
   {
     label: "Trusted Consumers",
     target: 1200,
-    icon: <ShieldCheck className="w-10 h-10 text-[#FF9500] dark:hover:text-orange-300 dark:text-[#a9bfdc]" />,
+    icon: <ShieldCheck className="w-10 h-10 text-[#169ed9]" />,
   },
   {
     label: "Projects Completed",
     target: 950,
-    icon: <CheckCircle className="w-10 h-10 text-[#FF9500] dark:text-[#a9bfdc]" />,
+    icon: <CheckCircle className="w-10 h-10 text-[#169ed9]" />,
   },
 ]
 
@@ -64,7 +64,7 @@ export default function StatsSection() {
         }
       },
       {
-        threshold: 0.3, // Adjust as needed
+        threshold: 0.3,
       }
     )
 
@@ -80,10 +80,10 @@ export default function StatsSection() {
   return (
     <section
       ref={containerRef}
-      className="py-16 md:py-24 bg-gradient-to-b from-orange-50 to-orange-100 dark:from-[#1E293B] dark:to-[#334155]"
+      className="py-16 md:py-24 bg-gradient-to-b from-[#e5f6fd] to-[#ffffff]"
     >
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#1e293b]">
           Trusted by Thousands
         </h2>
 
@@ -94,13 +94,13 @@ export default function StatsSection() {
             return (
               <div
                 key={index}
-                className="group bg-white hover:shadow-2xl dark:bg-gray-800 rounded-xl p-6 shadow-md transition-all duration-300 hover:scale-105"
+                className="group bg-white hover:shadow-2xl rounded-xl p-6 shadow-md transition-all duration-300 hover:scale-105 border border-[#dbeeff]"
               >
                 <div className="mb-4 flex justify-center">{stat.icon}</div>
-                <div className="text-4xl font-bold text-primary dark:text-[#a9bfdc]">
+                <div className="text-4xl font-bold text-[#169ed9]">
                   {count.toLocaleString()}
                 </div>
-                <div className="text-muted-foreground mt-2 text-lg">{stat.label}</div>
+                <div className="text-[#4b5563] mt-2 text-lg">{stat.label}</div>
               </div>
             )
           })}

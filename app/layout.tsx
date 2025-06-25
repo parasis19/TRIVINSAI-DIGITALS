@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className="font-sans">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem> */}
           <div className="flex min-h-screen flex-col">
              
               {/* <Navbar /> */}
@@ -40,7 +40,7 @@ export default function RootLayout({
               <Footer />
               <CookieConsent />
           </div>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   )
