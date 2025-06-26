@@ -12,78 +12,69 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-  <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
-      {/* Hero Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900 border-b   transition-all duration-300 
-    bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 
-    dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]  md:py-24 ">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollAnimation>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We offer comprehensive digital solutions to help businesses thrive in the digital landscape.
-            </p>
-          </ScrollAnimation>
-        </div>
-      </section>
+  <div className="pt-20 bg-gradient-to-r from-[#a2e3ff] via-[#edeef0] to-[#a2e3ff]">
+  {/* Hero Section */}
+  <section className="py-16 md:py-24 border-b transition-all duration-300 bg-gradient-to-r from-[#a2e3ff] via-[#edeef0] to-[#a2e3ff]">
+    <div className="container mx-auto px-4 text-center">
+      <ScrollAnimation>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1e293b] dark:text-white">
+          Our Services
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          We offer comprehensive digital solutions to help businesses thrive in the digital landscape.
+        </p>
+      </ScrollAnimation>
+    </div>
+  </section>
 
-      {/* Website Development Section */}
-      <section id="websites" className="py-16 md:py-24  dark:bg-[#111827]">
-        <div className="container mx-auto px-4 ">
-          <div className="flex flex-col lg:flex-row items-center bg-orange-200 gap-12 dark:bg-[#111827] ">
-            <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden  ">
+
+      {/* Website Development */}
+      <section id="websites" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/2 w-full">
               <ScrollAnimation>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/services/webC.jpg?height=400&width=600"
+                    src="/services/webC.jpg"
                     alt="Website Development"
                     fill
                     className="object-cover"
-                    id="#web"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
                   />
                 </div>
               </ScrollAnimation>
             </div>
-            <div className="lg:w-1/2 space-y-6 ">
+            <div className="lg:w-1/2 space-y-6">
               <ScrollAnimation>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Website Development</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
+                  Website Development
+                </h2>
                 <p className="text-xl text-muted-foreground mb-6">
-                  We create beautiful, responsive websites that captivate your audience and drive conversions. Our
-                  websites are built with the latest technologies and optimized for performance and search engines.
+                  We create beautiful, responsive websites that captivate your audience and drive conversions.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Responsive Design:</span> Websites that look great on any device
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">SEO Optimization:</span> Built to rank well in search engines
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Performance:</span> Fast loading times and smooth interactions
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Content Management:</span> Easy-to-use systems for updating
-                      content
-                    </p>
-                  </div>
-                </div>
+                <ul className="space-y-4">
+                  {[
+                    ["Responsive Design:", "Websites that look great on any device"],
+                    ["SEO Optimization:", "Built to rank well in search engines"],
+                    ["Performance:", "Fast loading times and smooth interactions"],
+                    ["Content Management:", "Easy-to-use systems for updating content"],
+                  ].map(([title, desc], i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-[#169ed9] mr-2 text-xl">•</span>
+                      <p className="text-foreground">
+                        <span className="font-semibold">{title}</span> {desc}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
                 <div className="pt-4">
-<a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
-  <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">
-    Get a Quote
-  </Button>
-</a>
+                  <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
+                      Get a Quote
+                    </Button>
+                  </a>
                 </div>
               </ScrollAnimation>
             </div>
@@ -91,61 +82,53 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* App Development Section */}
-      <section id="apps" className="py-16 md:py-24  bg-gray-50 dark:bg-[#070c17]  ">
-        <div className="container mx-auto px-4 dark:bg-[#070c17]">
-          <div className="flex flex-col  lg:flex-row-reverse items-center gap-12">
-            <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden ">
+      {/* App Development */}
+      <section id="apps" className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+            <div className="lg:w-1/2 w-full">
               <ScrollAnimation>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/services/appC.jpg?height=400&width=600"
+                    src="/services/appC.jpg"
                     alt="App Development"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
                   />
                 </div>
               </ScrollAnimation>
             </div>
             <div className="lg:w-1/2 space-y-6">
               <ScrollAnimation>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">App Development</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
+                  App Development
+                </h2>
                 <p className="text-xl text-muted-foreground mb-6">
                   We develop native and cross-platform mobile applications that deliver exceptional user experiences.
-                  Our team ensures your app is intuitive, stable, and performant.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Native Apps:</span> iOS and Android applications
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Cross-Platform:</span> Apps that work on multiple platforms
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">UX/UI Design:</span> Intuitive and engaging user interfaces
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Maintenance:</span> Ongoing support and updates
-                    </p>
-                  </div>
-                </div>
+                <ul className="space-y-4">
+                  {[
+                    ["Native Apps:", "iOS and Android applications"],
+                    ["Cross-Platform:", "Apps that work on multiple platforms"],
+                    ["UX/UI Design:", "Intuitive and engaging user interfaces"],
+                    ["Maintenance:", "Ongoing support and updates"],
+                  ].map(([title, desc], i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-[#169ed9] mr-2 text-xl">•</span>
+                      <p className="text-foreground">
+                        <span className="font-semibold">{title}</span> {desc}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
                 <div className="pt-4">
-<a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
-  <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">
-    Get a Quote
-  </Button>
-</a>
+                  <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
+                      Get a Quote
+                    </Button>
+                  </a>
                 </div>
               </ScrollAnimation>
             </div>
@@ -153,56 +136,53 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Ad Creation Section */}
-      <section id="ads" className="py-16 md:py-24 dark:bg-[#111827]">
+      {/* Ad Creation */}
+      <section id="ads" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12 dark:bg-[#111827]">
-            <div className="lg:w-1/2 relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden ">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/2 w-full">
               <ScrollAnimation>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image src="/services/addC.jpg?height=400&width=600" alt="Ad Creation" fill className="object-cover" id="#ads" />
+                <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src="/services/addC.jpg"
+                    alt="Ad Creation"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
                 </div>
               </ScrollAnimation>
             </div>
             <div className="lg:w-1/2 space-y-6">
               <ScrollAnimation>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ad Creation</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
+                  Ad Creation
+                </h2>
                 <p className="text-xl text-muted-foreground mb-6">
-                  We design eye-catching ads and implement digital marketing strategies that boost your brand visibility
-                  and drive conversions.
+                  We design eye-catching ads and implement digital marketing strategies that boost your brand.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Digital Marketing:</span> Comprehensive campaigns
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Visual Ads:</span> Eye-catching designs
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">Analytics:</span> Data-driven optimization
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-primary mr-2 text-xl">•</span>
-                    <p className="text-foreground">
-                      <span className="font-semibold">ROI Tracking:</span> Measure campaign success
-                    </p>
-                  </div>
-                </div>
+                <ul className="space-y-4">
+                  {[
+                    ["Digital Marketing:", "Comprehensive campaigns"],
+                    ["Visual Ads:", "Eye-catching designs"],
+                    ["Analytics:", "Data-driven optimization"],
+                    ["ROI Tracking:", "Measure campaign success"],
+                  ].map(([title, desc], i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-[#169ed9] mr-2 text-xl">•</span>
+                      <p className="text-foreground">
+                        <span className="font-semibold">{title}</span> {desc}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
                 <div className="pt-4">
-<a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
-  <Button className="bg-primary dark:hover:bg-[#4a5d88] dark:bg-[#6D819C] hover:bg-secondary text-white">
-    Get a Quote
-  </Button>
-</a>
+                  <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
+                      Get a Quote
+                    </Button>
+                  </a>
                 </div>
               </ScrollAnimation>
             </div>
@@ -210,67 +190,69 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* All Services Grid */}
-      <section className="py-16 md:py-24  bg-gradient-to-b from-white to-orange-100 dark:from-[#111827] dark:to-[#6D819C]">
-        <div className="container mx-auto px-4">
-          <ScrollAnimation>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">All Services</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Explore our comprehensive range of digital services
-              </p>
-            </div>
-          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ScrollAnimation>
-              <ServiceCard
-                title="Website Development"
-                description="Modern, responsive websites that captivate your audience and drive conversions."
-                icon={Code}
-                benefits={[
-                  "Responsive design for all devices",
-                  "SEO-optimized structure",
-                  "Fast loading speeds",
-                  "User-friendly CMS",
-                ]}
-                link="/contact?service=website"
-              />
-            </ScrollAnimation>
-
-            <ScrollAnimation delay={200}>
-              <ServiceCard
-                title="App Development"
-                description="Native and cross-platform mobile applications that deliver exceptional user experiences."
-                icon={Smartphone}
-                benefits={[
-                  "iOS and Android support",
-                  "Intuitive user interfaces",
-                  "Performance optimization",
-                  "Regular updates & maintenance",
-                ]}
-                link="/contact?service=app"
-              />
-            </ScrollAnimation>
-
-            <ScrollAnimation delay={400}>
-              <ServiceCard
-                title="Ad Creation"
-                description="Eye-catching ads and digital marketing strategies that boost your brand visibility."
-                icon={PenTool}
-                benefits={[
-                  "Strategic campaign planning",
-                  "Creative visual designs",
-                  "Data-driven optimization",
-                  "Performance tracking & reporting",
-                ]}
-                link="/contact?service=ad"
-              />
-            </ScrollAnimation>
+ {/* Digital Marketing */}
+<section id="marketing" className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+      
+      {/* Right Image (will appear on top in mobile) */}
+      <div className="lg:w-1/2 w-full">
+        <ScrollAnimation>
+          <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
+            <Image
+              src="/services/digi.jpg"
+              alt="Digital Marketing"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
           </div>
-        </div>
-      </section>
+        </ScrollAnimation>
+      </div>
 
+      {/* Left Text Content */}
+      <div className="lg:w-1/2 space-y-6">
+        <ScrollAnimation>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
+            Digital Marketing
+          </h2>
+          <p className="text-xl text-muted-foreground mb-6">
+            We create and execute results-driven digital marketing strategies tailored to grow your brand online.
+          </p>
+          <ul className="space-y-4">
+            {[
+              ["SEO:", "Optimize your website to rank higher on search engines"],
+              ["Social Media:", "Build brand awareness through engaging content"],
+              ["PPC Ads:", "Drive targeted traffic with paid advertising"],
+              ["Analytics:", "Track performance and refine strategies"],
+            ].map(([title, desc], i) => (
+              <li key={i} className="flex items-start">
+                <span className="text-[#169ed9] mr-2 text-xl">•</span>
+                <p className="text-foreground">
+                  <span className="font-semibold">{title}</span> {desc}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="pt-4">
+            <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
+                Get a Quote
+              </Button>
+            </a>
+          </div>
+        </ScrollAnimation>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+      
                 {/* Process Section */}
       <section className="py-20 flex justify-center dark:bg-[#111827] ">
         <div className="container mx-auto px-4 md:px-6 ">
@@ -336,11 +318,6 @@ export default function ServicesPage() {
             )}
           </div>
 
-          {/* Center Circle */}
-          {/* <div className="md:block absolute left-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
-            <span className="font-bold">{index + 1}</span>
-          </div> */}
-
           {/* Right Side */}
           <div className={`md:w-1/2 ${index % 2 === 1 ? "md:pl-12 mt-4 md:mt-0" : ""}`}>
             {index % 2 === 1 && (
@@ -358,31 +335,24 @@ export default function ServicesPage() {
 </div>
 </section> 
 
-       
-      
-
-      {/* CTA Section */}
-      <section className="py-20 bg-orange-400 text-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollAnimation>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-              <p className="text-white/80 mb-8 text-lg">
-                Contact us today to discuss your project and how TRIVINSAI Digital can help you achieve your digital
-                goals.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-full transition-colors duration-300 font-medium"
-              >
-                Request a Free Consultation
-                <ArrowRight size={20} className="ml-2" />
-              </Link>
-            </ScrollAnimation>
-          </div>
+      {/* Call To Action */}
+      <section className="py-20 bg-[#169ed9] text-white">
+        <div className="container mx-auto px-4 text-center">
+          <ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p className="text-white/80 mb-8 text-lg">
+              Contact us today to discuss your project and how TRIVINSAI Digital can help.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center bg-white text-[#169ed9] hover:bg-gray-200 px-8 py-4 rounded-full transition-colors duration-300 font-medium"
+            >
+              Request a Free Consultation
+              <ArrowRight size={20} className="ml-2" />
+            </Link>
+          </ScrollAnimation>
         </div>
       </section>
     </div>
-    
   )
 }

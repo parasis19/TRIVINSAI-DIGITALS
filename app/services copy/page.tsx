@@ -91,8 +91,8 @@ export default function ServicesPage() {
   return (
  <div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
       {/* Hero Section */}
-      <section className="py-20  ">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-20 ">
+        <div className="container mx-auto px-4 bg-gradient-to-r from-[#a2e3ff] via-[#edeef0] to-[#a2e3ff] md:px-6">
           <div className="max-w-3xl bg-orange-200 mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
             <p className="text-neutral-dark text-lg mb-8">

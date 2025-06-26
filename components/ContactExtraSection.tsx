@@ -10,7 +10,7 @@ export default function ContactExtraSection() {
       </p>
       <a
         href="/faq"
-        className="inline-block px-6 py-3 bg-primary text-white rounded hover:bg-secondary transition"
+        className="inline-block px-6 py-3 bg-[#169ed9] text-white rounded hover:bg-[#0d597d] transition"
       >
         Visit FAQ
       </a>

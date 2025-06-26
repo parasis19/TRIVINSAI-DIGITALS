@@ -50,7 +50,7 @@ export const DragCloseDrawerExample = () => {
           </p>
           <p>
             For more information, please read our full privacy policy or contact us directly at{" "}
-            <a className="text-primary underline" href="mailto:privacy@trivinsai.com">
+            <a className="text-[#169ed9] hover:text-[#1e293b] underline" href="mailto:privacy@trivinsai.com">
               privacy@trivinsai.com
             </a>.
           </p>
@@ -106,7 +106,7 @@ const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
             transition={{
               ease: "easeInOut",
             }}
-            className="absolute bottom-0 h-[75vh] w-full overflow-hidden rounded-t-3xl bg-orange-100 dark:bg-[#111827]"
+            className="absolute bottom-0 h-[75vh] w-full overflow-hidden rounded-t-3xl bg-[#edeef0] "
             style={{ y }}
             drag="y"
             dragControls={controls}
@@ -125,7 +125,7 @@ const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
               bottom: 0.5,
             }}
           >
-            <div className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-orange-100 dark:bg-[#111827] p-4">
+            <div className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-[#edeef0] p-4">
               <button
                 onPointerDown={(e) => {
                   controls.start(e);

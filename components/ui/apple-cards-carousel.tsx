@@ -219,21 +219,6 @@ export const Card = ({
     onCardClose(index)
   }
 
-  const handleWebsiteClick = () => {
-    if (card.websiteUrl) {
-      window.open(card.websiteUrl, "_blank")
-    }
-  }
-
-  const handleEmailClick = () => {
-    if (card.emailSubject && card.emailBody) {
-      const mailtoLink = `mailto:contact@example.com?subject=${encodeURIComponent(
-        card.emailSubject,
-      )}&body=${encodeURIComponent(card.emailBody)}`
-      window.location.href = mailtoLink
-    }
-  }
-
   return (
     <>
       {!isTemplateCard && (
@@ -253,14 +238,14 @@ export const Card = ({
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ type: "spring", duration: 0.5 }}
                 ref={containerRef}
-                className="relative bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                className="relative bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl w-full max-h-[90vh] overflow-y-auto max-w-lg md:max-w-3xl"
               >
                 {/* Header */}
                 <div className="sticky top-0 z-10 bg-white dark:bg-neutral-900 border-b border-gray-200 dark:border-neutral-700 p-6 rounded-t-2xl">
                   <div className="flex items-start justify-between">
                     <div>
                       <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-1">{card.category}</p>
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white pr-8">{card.title}</h2>
+                      <h2 className="text-xl font-bold text-gray-900 dark:text-white pr-8">{card.title}</h2>
                     </div>
                     <button
                       onClick={handleClose}
@@ -273,7 +258,7 @@ export const Card = ({
 
                 {/* Content */}
                 <div className="p-6">
-                  <TemplatePreview card={card} onWebsiteClick={handleWebsiteClick} onEmailClick={handleEmailClick} />
+                  <TemplatePreview card={card} />
                 </div>
               </motion.div>
             </div>
