@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "motion/react"
 import Image, { type ImageProps } from "next/image"
 import { useOutsideClick } from "@/hooks/use-outside-click"
-import type { CardData } from "@/data/cards-data"
+import type { CardData } from "@/app/templates/data/cards-data"
 import { TemplatePreview } from "./template-preview"
 
 interface CarouselProps {
@@ -26,6 +26,29 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const [canScrollLeft, setCanScrollLeft] = React.useState(false)
   const [canScrollRight, setCanScrollRight] = React.useState(true)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoSliding, setIsAutoSliding] = useState(true)
+
+  useEffect(() => {
+    if (!isAutoSliding) return
+
+    const interval = setInterval(() => {
+      if (carouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
+        const isAtEnd = scrollLeft >= scrollWidth - clientWidth - 10
+
+        if (isAtEnd) {
+          // Reset to beginning
+          carouselRef.current.scrollTo({ left: 0, behavior: "smooth" })
+        } else {
+          // Scroll to next
+          carouselRef.current.scrollBy({ left: 300, behavior: "smooth" })
+        }
+        checkScrollability()
+      }
+    }, 3000) // Auto-slide every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [isAutoSliding])
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -43,15 +66,21 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   }
 
   const scrollLeft = () => {
+    setIsAutoSliding(false)
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -300, behavior: "smooth" })
     }
+    // Resume auto-slide after 5 seconds
+    setTimeout(() => setIsAutoSliding(true), 5000)
   }
 
   const scrollRight = () => {
+    setIsAutoSliding(false)
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: 300, behavior: "smooth" })
     }
+    // Resume auto-slide after 5 seconds
+    setTimeout(() => setIsAutoSliding(true), 5000)
   }
 
   const handleCardClose = (index: number) => {
@@ -78,6 +107,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
           ref={carouselRef}
           onScroll={checkScrollability}
+          onMouseEnter={() => setIsAutoSliding(false)}
+          onMouseLeave={() => setIsAutoSliding(true)}
         >
           <div className={cn("absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l")}></div>
 
@@ -125,7 +156,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             >
               <motion.button
                 onClick={() => (window.location.href = "/templates")}
-                className="relative z-10 flex h-56 w-80 flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 md:h-96 md:w-[40rem] hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                className="relative z-10 flex h-56 w-80 flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 md:h-96 md:w-[40rem] hover:from-blue-600 hover:to-purple-700 transition-all duration-300 border-4 border-blue-400 hover:border-purple-400"
               >
                 <div className="relative z-40 text-center">
                   <motion.p className="font-sans text-sm font-medium text-white/80 md:text-base mb-2">
@@ -151,20 +182,20 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             </motion.div>
           </div>
         </div>
-        <div className="mr-10 flex justify-end gap-2">
+        <div className="flex justify-center gap-4 mt-8">
           <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            className="relative z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 shadow-lg transition-all duration-200"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowLeft className="h-7 w-7 text-gray-600" />
           </button>
           <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            className="relative z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 shadow-lg transition-all duration-200"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowRight className="h-7 w-7 text-gray-600" />
           </button>
         </div>
       </div>
@@ -184,7 +215,7 @@ export const Card = ({
   isTemplateCard?: boolean
 }) => {
   const [open, setOpen] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
   const { onCardClose, currentIndex } = useContext(CarouselContext)
 
   useEffect(() => {
@@ -249,6 +280,7 @@ export const Card = ({
                     </div>
                     <button
                       onClick={handleClose}
+                      title="Close"
                       className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors"
                     >
                       <IconX className="h-5 w-5 text-gray-600 dark:text-gray-400" />
@@ -268,7 +300,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-56 w-80 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-96 md:w-[40rem] dark:bg-neutral-900 hover:scale-105 transition-transform duration-300"
+        className="relative z-10 flex h-56 w-80 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-96 md:w-[40rem] dark:bg-neutral-900 hover:scale-105 transition-transform duration-300 border-4 border-gray-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
@@ -296,7 +328,6 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }: Image
   return (
     <Image
       className={cn("h-full w-full transition duration-300", isLoading ? "blur-sm" : "blur-0", className)}
-      onLoading={() => setLoading(true)}
       onLoad={() => setLoading(false)}
       src={(src as string) || "/placeholder.svg"}
       width={width}

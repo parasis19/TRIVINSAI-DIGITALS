@@ -81,7 +81,7 @@ export default function Footer() {
                   href="/services#ads"
                   className="text-[#1e293b] dark:text-gray-400 hover:text-[#169ed9]"
                 >
-                  Digital Marketing
+                  Visual Design
                 </Link>
               </li>
               <li>
@@ -89,7 +89,7 @@ export default function Footer() {
                   href="/services#design"
                   className="text-[#1e293b] dark:text-gray-400 hover:text-[#169ed9]"
                 >
-                  Visual Design
+                  Digital Marketing
                 </Link>
               </li>
             </ul>

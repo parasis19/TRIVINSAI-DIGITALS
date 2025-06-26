@@ -1,26 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import {
-  Code,
-  Smartphone,
-  ArrowRightCircle,
-  Megaphone,
-  ChevronLeft,
-  ChevronRight,
-  Monitor,
-  Laptop,
-  Tablet,
-} from "lucide-react"
+import { Code, Smartphone, ArrowRightCircle, Megaphone, Monitor, Laptop, Tablet } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-import { HeroScrollDemo } from "@/components/HeroScrollDemo"
 import Link from "next/link"
+import { HeroScrollDemo } from "@/components/HeroScrollDemo"
 import AppleCardsCarouselDemo from "@/components/AppleCardsCarouselDemo"
 import ParallaxSection from "@/components/ParallaxExample"
 import StatsSection from "@/components/StatsSection"
 import ServicesSection from "@/components/ServicesSection"
-
 
 const devices = [
   {
@@ -75,7 +64,7 @@ const services = [
 
 // Desktop Mockup Component
 const DesktopMockup = () => (
-  <div className="relative  transform hover:scale-105 transition-transform duration-500">
+  <div className="relative transform hover:scale-105 transition-transform duration-500">
     <div className="absolute inset-0 bg-[rgba(14,159,218,0.2)] rounded-3xl blur-3xl scale-110 translate-x-4 translate-y-4"></div>
     <div className="relative">
       {/* Monitor */}
@@ -95,44 +84,46 @@ const DesktopMockup = () => (
               </div>
             </div>
           </div>
-{/* Content */}
-<div className="pt-6 sm:pt-8 p-3 sm:p-6 lg:p-8 h-full">
-  <div className="text-center mb-3 sm:mb-6">
-    <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold text-blue-800 mb-1 sm:mb-2">Trivinsai</h1>
-    <p className="text-xs sm:text-sm lg:text-lg text-sky-600">Digital Solutions</p>
-  </div>
+          {/* Content */}
+          <div className="pt-6 sm:pt-8 p-3 sm:p-6 lg:p-8 h-full">
+            <div className="text-center mb-3 sm:mb-6">
+              <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold text-blue-800 mb-1 sm:mb-2">Trivinsai</h1>
+              <p className="text-xs sm:text-sm lg:text-lg text-sky-600">Digital Solutions</p>
+            </div>
 
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mb-3 sm:mb-6">
-    {services.map((service, index) => (
-      <div
-        key={index}
-        className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-4 shadow-lg border border-blue-100"
-      >
-        <div
-          className={`w-8 h-8 sm:w-10 sm:w-10 lg:w-12 lg:h-12 bg-gradient-to-r ${service.color} rounded-md sm:rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto`}
-        >
-          <service.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
-        </div>
-        <h3 className="font-semibold text-gray-800 text-xs sm:text-sm text-center mb-1">{service.title}</h3>
-        <p className="text-xs text-gray-600 text-center mb-1 sm:mb-2 hidden sm:block">
-          {service.description.substring(0, 50)}...
-        </p>
-        <div className="text-center">
-          <span className="text-xs sm:text-sm font-bold text-blue-600">{service.price}</span>
-        </div>
-      </div>
-    ))}
-  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mb-3 sm:mb-6">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-4 shadow-lg border border-blue-100"
+                >
+                  <div
+                    className={`w-8 h-8 sm:w-10 sm:w-10 lg:w-12 lg:h-12 bg-gradient-to-r ${service.color} rounded-md sm:rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto`}
+                  >
+                    <service.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-800 text-xs sm:text-sm text-center mb-1">{service.title}</h3>
+                  <p className="text-xs text-gray-600 text-center mb-1 sm:mb-2 hidden sm:block">
+                    {service.description.substring(0, 50)}...
+                  </p>
+                  <div className="text-center">
+                    <span className="text-xs sm:text-sm font-bold text-blue-600">{service.price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-  {/* ✅ Button with Link */}
-  <div className="text-center">
-    <Button asChild size="sm" className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white text-xs sm:text-sm px-3 sm:px-4 py-2">
-      <Link href="/contact">
-        Get Started Today
-      </Link>
-    </Button>
-  </div>
-</div>
+            {/* ✅ Button with Link */}
+            <div className="text-center">
+              <Button
+                asChild
+                size="sm"
+                className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white text-xs sm:text-sm px-3 sm:px-4 py-2"
+              >
+                <Link href="/contact">Get Started Today</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -374,44 +365,54 @@ export default function DeviceMockupCarousel() {
         <div className="absolute top-40 left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000"></div>
       </div>
 
-      {/* Hero Section */}
-      <div className="relative z-10  mt-20 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* Left Content - Hero Text */}
-          <div className="space-y-6 sm:space-y-8  lg:mt-[40px]">
-            <div
-              className={`transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-900 leading-tight">
-                The future is{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 animate-pulse">
-                  digital
-                </span>
-              </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-blue-700 mt-4 sm:mt-6 leading-relaxed">
-                Transform your business with cutting-edge digital solutions. We create stunning websites, powerful apps,
-                and compelling ads that drive results.
-              </p>
-            </div>
+  {/* Hero Section */}
+<div className="relative z-10 mt-4 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-20">
+  <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+    {/* Left Content - Hero Text */}
+    <div className="space-y-6 sm:space-y-8 lg:mt-[40px]">
+      <div
+        className={`transition-all duration-1000 delay-300 ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        }`}
+      >
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-900 leading-tight">
+          The future is{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 animate-pulse">
+            digital
+          </span>
+        </h1>
+        <p className="text-lg sm:text-xl lg:text-2xl text-blue-700 mt-4 sm:mt-6 leading-relaxed">
+          Transform your business with cutting-edge digital solutions. We create stunning websites, powerful apps,
+          and compelling ads that drive results.
+        </p>
+      </div>
 
-            <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white border-0 transform hover:scale-105 transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
-              >
-                Start Your Project
-                <ArrowRightCircle className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-300 text-blue-800 hover:bg-blue-800 hover:text-white transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
-              >
-                View Our Work
-              </Button>
-            </div>
+      <div
+        className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        }`}
+      >
+        <a href="/contact">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white border-0 transform hover:scale-105 transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+          >
+            Start Your Project
+            <ArrowRightCircle className="ml-2 h-5 w-5" />
+          </Button>
+        </a>
+        <a href="/templates">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-blue-300 text-blue-800 hover:bg-blue-800 hover:text-white transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+          >
+            View Our Work
+          </Button>
+        </a>
+      </div>
+   
+
 
             {/* Stats */}
             <div
@@ -433,43 +434,31 @@ export default function DeviceMockupCarousel() {
           </div>
 
           {/* Right Content - Device Carousel */}
-          <div className="relative lg:mt-[40px]">
+          <div className="relative lg:mt-[20px]">
             <div
               className={`transition-all duration-1000 delay-400 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
             >
-
-
-              {/* Device Mockup */}
-              <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] flex items-center justify-center">
-                <div key={currentSlide} className="animate-in slide-in-from-right-5 fade-in duration-700 w-full">
-                  {renderCurrentDevice()}
+              {/* Fixed Device Mockup Container - Accommodates all device sizes */}
+              <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] flex items-center justify-center">
+                <div
+                  key={currentSlide}
+                  className="animate-in slide-in-from-right-5 fade-in duration-700 absolute inset-0 flex items-center justify-center"
+                >
+                  <div className="w-full h-full flex items-center justify-center">{renderCurrentDevice()}</div>
                 </div>
-
-
-
-                {/* Navigation Arrows */}
-
               </div>
-
-              {/* Slide Indicators */}
-
-
-              {/* Auto-play indicator */}
-
             </div>
           </div>
         </div>
       </div>
 
+      <HeroScrollDemo />
+      <StatsSection />
 
-<HeroScrollDemo/>
-<StatsSection />
-
-            {/* Services Section */}
-            <div className="top-0">
-          <ServicesSection />
-          </div>
-
+      {/* Services Section */}
+      <div className="top-0">
+        <ServicesSection />
+      </div>
 
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-8 h-8 bg-blue-500 rounded-full animate-bounce opacity-80"></div>
@@ -479,17 +468,16 @@ export default function DeviceMockupCarousel() {
       ></div>
       <div className="absolute top-1/2 left-8 w-4 h-4 bg-pink-500 rounded-full animate-pulse opacity-80"></div>
 
-            <div
+      <div
         className="absolute bottom-20 right-10 w-6 h-6 bg-teal-500 rounded-full animate-bounce opacity-80"
         style={{ animationDelay: "1s" }}
       ></div>
       <div className="absolute top-1/2 left-8 w-4 h-4 bg-pink-500 rounded-full animate-pulse opacity-80"></div>
-           <AppleCardsCarouselDemo/>
-      
-           
-           <div className=" bg-[#dbebff]">
-           <ParallaxSection/>
-           </div>
+      <AppleCardsCarouselDemo />
+
+      <div className=" bg-[#dbebff]">
+        <ParallaxSection />
+      </div>
     </div>
   )
 }

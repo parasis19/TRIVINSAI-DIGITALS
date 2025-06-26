@@ -135,60 +135,59 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* Ad Creation */}
-      <section id="ads" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 w-full">
-              <ScrollAnimation>
-                <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image
-                    src="/services/addC.jpg"
-                    alt="Ad Creation"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
-                  />
-                </div>
-              </ScrollAnimation>
-            </div>
-            <div className="lg:w-1/2 space-y-6">
-              <ScrollAnimation>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
-                  Ad Creation
-                </h2>
-                <p className="text-xl text-muted-foreground mb-6">
-                  We design eye-catching ads and implement digital marketing strategies that boost your brand.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    ["Digital Marketing:", "Comprehensive campaigns"],
-                    ["Visual Ads:", "Eye-catching designs"],
-                    ["Analytics:", "Data-driven optimization"],
-                    ["ROI Tracking:", "Measure campaign success"],
-                  ].map(([title, desc], i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#169ed9] mr-2 text-xl">•</span>
-                      <p className="text-foreground">
-                        <span className="font-semibold">{title}</span> {desc}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4">
-                  <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
-                      Get a Quote
-                    </Button>
-                  </a>
-                </div>
-              </ScrollAnimation>
-            </div>
+{/* visual design */}
+<section id="ads" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="lg:w-1/2 w-full">
+        <ScrollAnimation>
+          <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
+            <Image
+              src="/services/addC.jpg"
+              alt="Visual Design Showcase"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
           </div>
-        </div>
-      </section>
+        </ScrollAnimation>
+      </div>
+      <div className="lg:w-1/2 space-y-6">
+        <ScrollAnimation>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
+            Visual Design
+          </h2>
+          <p className="text-xl text-muted-foreground mb-6">
+            We craft compelling visual content including promotional videos and graphic posters to elevate your brand’s identity across platforms.
+          </p>
+          <ul className="space-y-4">
+            {[
+              ["Video Production:", "Engaging promotional & explainer videos"],
+              ["Graphic Posters:", "Custom visuals tailored for impact"],
+              ["Brand Messaging:", "Designs aligned with your brand tone"],
+              ["Multi-Platform Ready:", "Optimized for web, social & print"],
+            ].map(([title, desc], i) => (
+              <li key={i} className="flex items-start">
+                <span className="text-[#169ed9] mr-2 text-xl">•</span>
+                <p className="text-foreground">
+                  <span className="font-semibold">{title}</span> {desc}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="pt-4">
+            <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
+                Get a Quote
+              </Button>
+            </a>
+          </div>
+        </ScrollAnimation>
+      </div>
+    </div>
+  </div>
+</section>
 
 
  {/* Digital Marketing */}

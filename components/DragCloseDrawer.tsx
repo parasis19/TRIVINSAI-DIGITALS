@@ -68,7 +68,6 @@ interface DragCloseDrawerProps {
 
 const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
   const [scope, animate] = useAnimate();
-  const [drawerRef, { height }] = useMeasure();
 
   const y = useMotionValue(0);
   const controls = useDragControls();
