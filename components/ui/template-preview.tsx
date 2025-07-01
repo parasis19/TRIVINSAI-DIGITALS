@@ -107,14 +107,14 @@ Best regards`
           <div className="space-y-3">
             <button
               onClick={handlePreviewClick}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-900 text-white rounded-xl font-medium transition-colors duration-200"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-colors duration-200"
             >
               <IconExternalLink className="h-5 w-5" />
               Preview Template
             </button>
             <button
               onClick={handleGetQuoteClick}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-900 hover:bg-blue-600 text-white rounded-xl font-medium transition-colors duration-200"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-medium transition-colors duration-200"
             >
               <IconMail className="h-5 w-5" />
               Get Quote

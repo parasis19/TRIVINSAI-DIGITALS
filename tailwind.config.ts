@@ -19,6 +19,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'ui-sans-serif', 'system-ui'],  // Add Poppins here
+         orbitron: ['"Orbitron"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

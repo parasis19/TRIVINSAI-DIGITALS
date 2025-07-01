@@ -11,14 +11,14 @@ export default function ParallaxSection() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-md rounded-2xl" />
+      <div className="absolute inset-0 bg-blue-200/50 backdrop-blur-sm rounded-2xl" />
 
       {/* Foreground Content */}
       <div className="relative z-10 flex h-full items-center justify-center flex-col text-center px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-[#1e293b] font-bold mb-4">
           Ready to Elevate Your Digital Presence?
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-white mb-6 max-w-xl">
+        <p className="text-base sm:text-lg md:text-xl text-[#1e293b] mb-6 max-w-xl">
           Join the hundreds of businesses that have transformed their digital strategy with TRIVINSAI Digital.
         </p>
         <Link href="/contact">

@@ -3,7 +3,12 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import ScrollAnimation from "@/components/scroll-animation"
 
 export default function FAQClientPage() {
@@ -124,14 +129,16 @@ export default function FAQClientPage() {
   }
 
   return (
-<div className="pt-20 bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B] ">
+    <div className="pt-20 bg-[#edeef0] dark:bg-[#1e293b]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-200 via-orange-100 to-orange-200 dark:from-[#1E293B] dark:via-[#334155] dark:to-[#1E293B]  py-16 md:py-24   ">
+      <section className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl text-[#111827] dark:text-white md:text-5xl lg:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
-              <p className="text-xl text-muted-foreground text-[#111827] dark:text-white   ">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1e293b] dark:text-white">
+                Frequently Asked Questions
+              </h1>
+              <p className="text-xl text-[#1e293b] dark:text-[#edeef0]">
                 Find answers to common questions about our services, process, and more.
               </p>
             </div>
@@ -140,16 +147,20 @@ export default function FAQClientPage() {
       </section>
 
       {/* FAQ Categories */}
-      <section className="py-8 dark:bg-[#111827] border-b">
+      <section className="py-8 dark:bg-[#1e293b] border-b border-[#ccc]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
-            <div className="flex  flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-4 justify-center">
               {categories.map((category) => (
                 <Button
                   key={category.id}
                   variant={activeCategory === category.id ? "default" : "outline"}
                   onClick={() => setActiveCategory(category.id)}
-                  className={activeCategory === category.id ? "bg-primary dark:bg-[#6D819C] dark:hover:bg-[#1a385e] hover:bg-primary/90" : ""}
+                  className={
+                    activeCategory === category.id
+                      ? "bg-[#169ed9] text-white hover:bg-[#117db0] dark:hover:bg-[#117db0]"
+                      : "text-[#1e293b] border-[#169ed9] hover:border-[#117db0] dark:text-[#edeef0]"
+                  }
                 >
                   {category.name}
                 </Button>
@@ -160,11 +171,11 @@ export default function FAQClientPage() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-16 dark:bg-[#111827] md:py-24">
+      <section className="py-16 md:py-24 bg-white dark:bg-[#1e293b]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-center">
+              <h2 className="text-3xl font-bold mb-8 text-center text-[#1e293b] dark:text-white">
                 {categories.find((c) => c.id === activeCategory)?.name} FAQs
               </h2>
               <Accordion type="single" collapsible className="space-y-4">
@@ -172,10 +183,14 @@ export default function FAQClientPage() {
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="bg-white dark:bg-gray-800 rounded-lg border border-border px-6"
+                    className="bg-[#edeef0] dark:bg-[#334155] rounded-lg border border-border px-6"
                   >
-                    <AccordionTrigger className="text-lg font-medium py-4">{faq.question}</AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pb-4">{faq.answer}</AccordionContent>
+                    <AccordionTrigger className="text-lg font-medium py-4 text-[#1e293b] dark:text-[#edeef0]">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-4 text-[#1e293b] dark:text-[#d1d5db]">
+                      {faq.answer}
+                    </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
@@ -185,16 +200,19 @@ export default function FAQClientPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 dark:bg-[#6D819C] md:py-24 ">
+      <section className="py-16 md:py-24 bg-[#169ed9]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
-            <div className="text-center text-[#111827] max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl text-[#111827] font-bold mb-6">Still Have Questions?</h2>
-              <p className="text-xl text-[#111827] dark:text-white text-muted-foreground mb-8">
+            <div className="text-center max-w-3xl mx-auto text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Still Have Questions?</h2>
+              <p className="text-xl mb-8">
                 Can't find the answer you're looking for? Contact our team for personalized assistance.
               </p>
               <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-secondary dark:hover:bg-[#274163] dark:bg-[#111827] hover:shadow-xl text-white">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#1e293b] hover:bg-[#edeef0] hover:text-[#1e293b] dark:text-[#1e293b]"
+                >
                   Contact Us
                 </Button>
               </Link>

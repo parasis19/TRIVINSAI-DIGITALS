@@ -1,15 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Code, Smartphone, ArrowRightCircle, Megaphone, Monitor, Laptop, Tablet } from "lucide-react"
+import { Code, Smartphone, Megaphone, Monitor, Laptop, Tablet, ArrowRightCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
 import Link from "next/link"
 import { HeroScrollDemo } from "@/components/HeroScrollDemo"
 import AppleCardsCarouselDemo from "@/components/AppleCardsCarouselDemo"
 import ParallaxSection from "@/components/ParallaxExample"
 import StatsSection from "@/components/StatsSection"
 import ServicesSection from "@/components/ServicesSection"
+import { ClipPathLinks } from "@/components/ClipPathLinks"
 
 const devices = [
   {
@@ -328,18 +328,9 @@ export default function DeviceMockupCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % devices.length)
-    }, 2000) // Change slide every 5 seconds
-
+    }, 2000)
     return () => clearInterval(interval)
   }, [])
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % devices.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + devices.length) % devices.length)
-  }
 
   const renderCurrentDevice = () => {
     switch (devices[currentSlide].component) {
@@ -355,39 +346,102 @@ export default function DeviceMockupCarousel() {
         return <PhoneMockup />
     }
   }
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-blue-50 to-blue-200 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0  overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000"></div>
+return (
+<div className="mt-20 sm:mt-0"> {/* 👈 This moves the entire page 10 units up */}
+    <div className="bg-gradient-to-br -mt-20 from-blue-100 via-blue-50 to-blue-200 relative overflow-hidden">
+      {/* Animated background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-32 left-32 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000"></div>
       </div>
 
-  {/* Hero Section */}
-<div className="relative z-10 mt-4 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-20">
-  <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-    {/* Left Content - Hero Text */}
-    <div className="space-y-6 sm:space-y-8 lg:mt-[40px]">
-      <div
-        className={`transition-all duration-1000 delay-300 ${
-          isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-        }`}
-      >
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-900 leading-tight">
-          The future is{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 animate-pulse">
-            digital
-          </span>
-        </h1>
-        <p className="text-lg sm:text-xl lg:text-2xl text-blue-700 mt-4 sm:mt-6 leading-relaxed">
-          Transform your business with cutting-edge digital solutions. We create stunning websites, powerful apps,
-          and compelling ads that drive results.
-        </p>
-      </div>
+      {/* Hero Section */}
+      <div className="relative z-10 flex items-center py-12 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
 
-      <div
+
+            <div className="space-y-8 pr-10 mt-20 lg:space-y-8">
+              <div
+                className={`transition-all duration-1000 delay-300 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+              >
+                {/* Main Hero Text Layout */}
+                <div className="space-y-4 lg:space-y-6">
+                  {/* First Line: "your DIGITAL FUTURE" */}
+                  <div className="flex flex-wrap items-baseline gap-2 lg:gap-3">
+                    <span
+                      className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold italic text-gray-700 leading-none"
+                      style={{ fontFamily: "'Dancing Script', cursive" }}
+                    >
+                      your
+                    </span>
+                    <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase text-gray-900 tracking-tight leading-none">
+                      DIGITAL FUTURE
+                    </span>
+                  </div>
+
+                  {/* Second Line: "starts here BUILD IT with" */}
+                  <div className="flex flex-wrap items-baseline gap-2 lg:gap-3 ml-2 lg:ml-4">
+                    <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-600 leading-none">
+                      starts here
+                    </span>
+                    <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black uppercase text-gray-900 tracking-tight leading-none">
+                      BUILD IT
+                    </span>
+                    <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-600 leading-none">
+                      with
+                    </span>
+                  </div>
+
+                  {/* TRIVINSAI with reflection effect */}
+                  <div className="mt-8 lg:mt-12 mb-8 lg:mb-12">
+                    <div className="relative inline-block">
+                      <h1
+                        className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black uppercase tracking-wider leading-none"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 25%, #1e40af 50%, #1e3a8a 75%, #312e81 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                          filter: "drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3))",
+                        }}
+                      >
+                        TRIVINSAI
+                      </h1>
+                      {/* Reflection effect */}
+                      <div
+                        className="absolute top-full left-0 w-full overflow-hidden pointer-events-none"
+                        style={{ height: "40%" }}
+                      >
+                        <h1
+                          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black uppercase tracking-wider leading-none transform scale-y-[-1] origin-top"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 25%, #1e40af 50%, #1e3a8a 75%, #312e81 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                            opacity: 0.25,
+                            filter: "blur(1px)",
+                            maskImage:
+                              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)",
+                            WebkitMaskImage:
+                              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)",
+                          }}
+                        >
+                          TRIVINSAI
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+ <div
         className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}
@@ -414,37 +468,50 @@ export default function DeviceMockupCarousel() {
    
 
 
-            {/* Stats */}
-            <div
-              className={`grid grid-cols-3 gap-4 sm:gap-8 pt-6 sm:pt-8 transition-all duration-1000 delay-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900">50+</div>
-                <div className="text-blue-700 text-xs sm:text-sm lg:text-base">Projects Completed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900">100%</div>
-                <div className="text-blue-700 text-xs sm:text-sm lg:text-base">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900">24/7</div>
-                <div className="text-blue-700 text-xs sm:text-sm lg:text-base">Support Available</div>
+              {/* Stats */}
+              <div
+                className={`grid grid-cols-3 gap-6 lg:gap-8 pt-8 lg:pt-12 transition-all duration-1000 delay-700 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+              >
+                <div className="text-center group">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text mb-2 group-hover:scale-110 transition-transform duration-300">
+                    50+
+                  </div>
+                  <div className="text-blue-700 text-xs sm:text-sm lg:text-base font-medium">Projects Completed</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text mb-2 group-hover:scale-110 transition-transform duration-300">
+                    100%
+                  </div>
+                  <div className="text-blue-700 text-xs sm:text-sm lg:text-base font-medium">Client Satisfaction</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text mb-2 group-hover:scale-110 transition-transform duration-300">
+                    24/7
+                  </div>
+                  <div className="text-blue-700 text-xs sm:text-sm lg:text-base font-medium">Support Available</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Content - Device Carousel */}
-          <div className="relative lg:mt-[20px]">
-            <div
-              className={`transition-all duration-1000 delay-400 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
-            >
-              {/* Fixed Device Mockup Container - Accommodates all device sizes */}
-              <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] flex items-center justify-center">
-                <div
-                  key={currentSlide}
-                  className="animate-in slide-in-from-right-5 fade-in duration-700 absolute inset-0 flex items-center justify-center"
-                >
-                  <div className="w-full h-full flex items-center justify-center">{renderCurrentDevice()}</div>
+            {/* Right Content - Device Carousel */}
+            <div className="relative lg:mt-[40px]">
+              <div
+                className={`transition-all duration-1000 delay-400 ${
+                  isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+                }`}
+              >
+                {/* Fixed Device Mockup Container - Accommodates all device sizes */}
+                <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] flex items-center justify-center">
+                  <div
+                    key={currentSlide}
+                    className="animate-in slide-in-from-right-5 fade-in duration-700 absolute inset-0 flex items-center justify-center"
+                  >
+                    <div className="w-full h-full flex items-center justify-center">
+                      {renderCurrentDevice()}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -468,16 +535,13 @@ export default function DeviceMockupCarousel() {
       ></div>
       <div className="absolute top-1/2 left-8 w-4 h-4 bg-pink-500 rounded-full animate-pulse opacity-80"></div>
 
-      <div
-        className="absolute bottom-20 right-10 w-6 h-6 bg-teal-500 rounded-full animate-bounce opacity-80"
-        style={{ animationDelay: "1s" }}
-      ></div>
-      <div className="absolute top-1/2 left-8 w-4 h-4 bg-pink-500 rounded-full animate-pulse opacity-80"></div>
       <AppleCardsCarouselDemo />
+    <ClipPathLinks/>
 
-      <div className=" bg-[#dbebff]">
+      <div className="bg-[#dbebff]">
         <ParallaxSection />
       </div>
+    </div>
     </div>
   )
 }
