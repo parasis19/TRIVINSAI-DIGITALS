@@ -4,7 +4,7 @@ import "./globals.css"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import CookieConsent from "@/components/cookie-consent"
-import { NavbarDemo } from "@/components/NavbarDemo"
+import NavbarDemo from "@/components/resizable-navbar-demo"
 // import HoverDropdownNavbar from "@/components/HoverDropdownNavbar"
 // import  {SmoothScrollHero } from "@/components/SmoothScrollHero"
 

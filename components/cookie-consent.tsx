@@ -57,7 +57,7 @@ export default function CookieConsent() {
             <Button variant="outline" size="sm" type="button" onClick={handleDecline}>
               Decline
             </Button>
-            <Button className="bg-primary hover:bg-secondary text-white" size="sm" type="button" onClick={handleAccept}>
+            <Button className="bg-blue-800 hover:bg-secondary text-white" size="sm" type="button" onClick={handleAccept}>
               Accept All
             </Button>
             <Button variant="ghost" size="icon" className="ml-2" type="button" onClick={handleClose} aria-label="Close">

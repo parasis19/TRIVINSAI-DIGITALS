@@ -142,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
+      <section id="team" className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center mb-16">
@@ -173,20 +173,20 @@ export default function AboutPage() {
       </section>
 
             {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-[#169ed9] dark:bg-[#1e293b]">
+      <section className="py-16 md:py-24 bg-[#0b486e]">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1e293b] dark:text-[#edeef0]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white dark:text-[#edeef0]">
                 Want to Work With Us?
               </h2>
-              <p className="text-xl text-[#1e293b] dark:text-[#edeef0] mb-8">
+              <p className="text-xl text-white dark:text-[#edeef0] mb-8">
                 Reach out today to discuss how we can help bring your digital vision to life.
               </p>
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-[#1e293b] text-white hover:bg-[#111827] dark:bg-[#edeef0] dark:text-[#1e293b] dark:hover:bg-white"
+                  className="bg-[#169ed9] text-white hover:bg-[#1489bb] dark:bg-[#edeef0] dark:text-[#1e293b] dark:hover:bg-white"
                 >
                   Get in Touch
                 </Button>
