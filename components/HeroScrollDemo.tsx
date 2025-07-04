@@ -17,9 +17,9 @@ const desktopImages = [
 ];
 
 const mobileImages = [
-  "/templates/mobile-1.png",
-  "/templates/mobile-2.png",
-  "/templates/mobile-3.png",
+  "/templates/mobile-1.jpg",
+  "/templates/mobile-2.jpg",
+  "/templates/mobile-3.jpg",
   // Add more mobile images
 ];
 

@@ -50,14 +50,14 @@ export default function CookieConsent() {
             <h3 className="text-lg font-semibold mb-1">Cookie Consent</h3>
             <p className="text-muted-foreground text-sm">
               We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our
-              traffic. By clicking "Accept All", you consent to our use of cookies.
+              traffic. By clicking "Accept All", you'll accept our privacy policy directlty and  consent to our use of cookies.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" size="sm" type="button" onClick={handleDecline}>
               Decline
             </Button>
-            <Button className="bg-primary hover:bg-secondary text-white" size="sm" type="button" onClick={handleAccept}>
+            <Button className="bg-[#169ed9] hover:bg-[#146587] text-white" size="sm" type="button" onClick={handleAccept}>
               Accept All
             </Button>
             <Button variant="ghost" size="icon" className="ml-2" type="button" onClick={handleClose} aria-label="Close">

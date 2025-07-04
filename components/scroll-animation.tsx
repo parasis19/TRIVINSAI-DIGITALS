@@ -2,46 +2,51 @@
 
 import type React from "react"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface ScrollAnimationProps {
   children: React.ReactNode
-  threshold?: number
   delay?: number
+  className?: string
 }
 
-export default function ScrollAnimation({ children, threshold = 0.1, delay = 0 }: ScrollAnimationProps) {
+export default function ScrollAnimation({ children, delay = 0, className = "" }: ScrollAnimationProps) {
+  const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("visible")
-            }, delay)
-            observer.unobserve(entry.target)
-          }
-        })
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setIsVisible(true)
+          }, delay)
+        }
       },
-      { threshold },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      },
     )
 
-    const currentRef = ref.current
-    if (currentRef) {
-      observer.observe(currentRef)
+    if (ref.current) {
+      observer.observe(ref.current)
     }
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef)
+      if (ref.current) {
+        observer.unobserve(ref.current)
       }
     }
-  }, [threshold, delay])
+  }, [delay])
 
   return (
-    <div ref={ref} className="animate-on-scroll">
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      } ${className}`}
+    >
       {children}
     </div>
   )

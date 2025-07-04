@@ -169,3 +169,125 @@ html {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+ 
+ 
+/* Balanced security styles */
+.secure-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.secure-image img,
+.secure-image canvas {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Prevent image extraction via CSS */
+.secure-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 49%, rgba(22, 158, 217, 0.02) 50%, transparent 51%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mobile-specific protections */
+@media (max-width: 768px) {
+  .secure-image {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+  }
+
+  /* Prevent long-press save on mobile */
+  .secure-image img,
+  .secure-image canvas {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Print protection */
+@media print {
+  .secure-image {
+    display: none !important;
+  }
+
+  .secure-image::after {
+    content: "Image protected - not available in print";
+    display: block;
+    padding: 2rem;
+    text-align: center;
+    background: #f3f4f6;
+    color: #6b7280;
+  }
+}
+
+/* Screenshot disruption */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.98;
+  }
+}
+
+.secure-image:hover::before {
+  animation: flicker 0.1s ease-in-out;
+}
+
+/* Disable developer tools context on images */
+.secure-image * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow normal text selection for other content */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span:not(.secure-image *) {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Smooth scrolling maintained */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure buttons and links work normally */
+button,
+a,
+input,
+textarea,
+select {
+  pointer-events: auto !important;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

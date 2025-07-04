@@ -30,12 +30,10 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   useEffect(() => {
     if (!isAutoSliding) return
-
     const interval = setInterval(() => {
       if (carouselRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
         const isAtEnd = scrollLeft >= scrollWidth - clientWidth - 10
-
         if (isAtEnd) {
           // Reset to beginning
           carouselRef.current.scrollTo({ left: 0, behavior: "smooth" })
@@ -46,7 +44,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         checkScrollability()
       }
     }, 3000) // Auto-slide every 3 seconds
-
     return () => clearInterval(interval)
   }, [isAutoSliding])
 
@@ -103,6 +100,24 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   return (
     <CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex }}>
       <div className="relative w-full">
+        {/* Left Navigation Button */}
+        <button
+          className="absolute left-4 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 hover:bg-white disabled:opacity-50 shadow-lg transition-all duration-200 backdrop-blur-sm border border-gray-200 md:h-14 md:w-14"
+          onClick={scrollLeft}
+          disabled={!canScrollLeft}
+        >
+          <IconArrowNarrowLeft className="h-5 w-5 text-gray-700 md:h-6 md:w-6" />
+        </button>
+
+        {/* Right Navigation Button */}
+        <button
+          className="absolute right-4 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 hover:bg-white disabled:opacity-50 shadow-lg transition-all duration-200 backdrop-blur-sm border border-gray-200 md:h-14 md:w-14"
+          onClick={scrollRight}
+          disabled={!canScrollRight}
+        >
+          <IconArrowNarrowRight className="h-5 w-5 text-gray-700 md:h-6 md:w-6" />
+        </button>
+
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
           ref={carouselRef}
@@ -111,7 +126,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           onMouseLeave={() => setIsAutoSliding(true)}
         >
           <div className={cn("absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l")}></div>
-
           <div className={cn("flex flex-row justify-start gap-4 pl-4", "mx-auto max-w-7xl")}>
             {items.map((item, index) => (
               <motion.div
@@ -135,7 +149,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                 {item}
               </motion.div>
             ))}
-
             {/* Templates Button Card */}
             <motion.div
               initial={{
@@ -182,22 +195,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             </motion.div>
           </div>
         </div>
-        <div className="flex justify-center gap-4 mt-8">
-          <button
-            className="relative z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 shadow-lg transition-all duration-200"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-          >
-            <IconArrowNarrowLeft className="h-7 w-7 text-gray-600" />
-          </button>
-          <button
-            className="relative z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 shadow-lg transition-all duration-200"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-          >
-            <IconArrowNarrowRight className="h-7 w-7 text-gray-600" />
-          </button>
-        </div>
       </div>
     </CarouselContext.Provider>
   )
@@ -224,13 +221,11 @@ export const Card = ({
         handleClose()
       }
     }
-
     if (open) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "auto"
     }
-
     window.addEventListener("keydown", onKeyDown)
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [open])
@@ -287,7 +282,6 @@ export const Card = ({
                     </button>
                   </div>
                 </div>
-
                 {/* Content */}
                 <div className="p-6">
                   <TemplatePreview card={card} />

@@ -35,7 +35,7 @@ const contactMethods = [
     title: "Email Us",
     description: "Send us your questions, feedback, or support requests anytime.",
     icon: FaEnvelope,
-    link: "mailto:support@example.com",
+    link: "mailto:admin@trivinsai.com",
     target: "_blank",
     color: "text-[#169ed9]",
     buttonLabel: "Send Email",

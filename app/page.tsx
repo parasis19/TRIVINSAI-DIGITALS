@@ -16,7 +16,7 @@ import ParallaxSection from "../components/ParallaxExample"
 import FlipWordsDemo from "@/components/FlipWordsDemo"
 import { HeroScrollDemo } from "@/components/HeroScrollDemo"
 import DeviceMockupCarousel from "@/components/device-mockup-carousel"
-import ServicesShowcase from "@/components/ServicesShowcase"
+ 
 
 
 
@@ -32,7 +32,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       
      <DeviceMockupCarousel/>
-     <ServicesShowcase />
+      
 
 
     </div>

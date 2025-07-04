@@ -34,19 +34,22 @@ export const DragCloseDrawerExample = () => {
             information when you interact with our website, subscribe to services, or reach out for support.
           </p>
           <p>
+            <strong>Device Information:</strong> For security and fraud prevention purposes, we may collect non-personal technical data such as browser type, device operating system, screen resolution, time zone, language, and anonymized device/browser fingerprints when users interact with protected content (such as image downloads or restricted sections).
+          </p>
+          <p>
             <strong>Use of Data:</strong> We use your information to provide and improve our services, communicate with you, process
             transactions, and ensure the security of our systems.
           </p>
           <p>
             <strong>Cookies & Tracking:</strong> We use essential, preference, analytics, and marketing cookies to enhance user
-            experience and analyze traffic.
+            experience and analyze traffic. In some cases, we may use browser fingerprinting technology to help detect and prevent unauthorized access or downloads.
           </p>
           <p>
             <strong>Data Protection:</strong> We implement technical and organizational safeguards to secure your information.
           </p>
           <p>
             <strong>Your Rights:</strong> You have the right to access, correct, or delete your data and opt out of marketing communications
-            at any time.
+            at any time. You may also opt out of certain non-essential tracking technologies, including fingerprinting, through your browser settings or by contacting us directly.
           </p>
           <p>
             For more information, please contact us at{" "}
