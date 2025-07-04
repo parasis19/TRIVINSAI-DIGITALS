@@ -593,27 +593,28 @@ export default function SecureTeamSection({ teamMembers }: SecureTeamSectionProp
           </div>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <ScrollAnimation key={member.name} delay={index * 100}>
-              <div className="bg-[#edeef0]   rounded-xl overflow-hidden   border border-[#edeef0]  transition-all duration-300 group">
-                <div className="relative h-80 w-full overflow-hidden secure-image">
-                  <SecureImage
-                    src={member.image || "/placeholder.svg"}
-                    alt={`${member.name} - ${member.role}`}
-                    memberName={member.name}
-                    onSecurityViolation={handleSecurityViolation}
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-[#1e293b] dark:text-white mb-1">{member.name}</h3>
-                  <p className="text-[#169ed9] font-medium mb-3">{member.role}</p>
-                  
-                </div>
-              </div>
-            </ScrollAnimation>
-          ))}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  {teamMembers.map((member, index) => (
+    <ScrollAnimation key={member.name} delay={index * 100}>
+      <div className="bg-[#edeef0] rounded-xl overflow-hidden border border-[#edeef0] transition-all duration-300 group">
+        <div className="relative w-full aspect-square overflow-hidden secure-image">
+          <SecureImage
+            src={member.image || "/placeholder.svg"}
+            alt={`${member.name} - ${member.role}`}
+            memberName={member.name}
+            onSecurityViolation={handleSecurityViolation}
+            className="object-cover w-full h-full"
+          />
         </div>
+        <div className="p-6 text-center">
+          <h3 className="text-xl font-bold text-[#1e293b] dark:text-white mb-1">{member.name}</h3>
+          <p className="text-[#169ed9] font-medium mb-3">{member.role}</p>
+        </div>
+      </div>
+    </ScrollAnimation>
+  ))}
+</div>
+
 
         {/* Enhanced security notice */}
         <div className="mt-12 text-center">

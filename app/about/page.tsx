@@ -178,7 +178,7 @@ export default function AboutPage() {
       </section>
 
       {/* Secure Team Section */}
-      <SecureTeamSection teamMembers={teamMembers} />
+      <SecureTeamSection id="team" teamMembers={teamMembers} />
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-[#169ed9] dark:bg-[#1e293b]">
