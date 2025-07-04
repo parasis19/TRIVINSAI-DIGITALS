@@ -16,10 +16,7 @@ import ParallaxSection from "../components/ParallaxExample"
 import FlipWordsDemo from "@/components/FlipWordsDemo"
 import { HeroScrollDemo } from "@/components/HeroScrollDemo"
 import DeviceMockupCarousel from "@/components/device-mockup-carousel"
-import HorizontalScrollCarousel from "@/components/HorizontalScrollCarousel"
-// import HeroGeometric from "@/components/hero-geometric"
-import ParallaxExample from "@/components/ParallaxExample"
-
+import ServicesShowcase from "@/components/ServicesShowcase"
 
 
 
@@ -33,13 +30,9 @@ export default function Home() {
   return (
     
     <div className="flex flex-col min-h-screen">
-      {/* <HeroGeometric /> */}
-     <DeviceMockupCarousel/>
-     <HorizontalScrollCarousel/>
       
-      <div className="bg-[#dbebff]">
-        <ParallaxSection />
-      </div>
+     <DeviceMockupCarousel/>
+     <ServicesShowcase />
 
 
     </div>

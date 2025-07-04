@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { HeroScrollDemo } from "@/components/HeroScrollDemo"
 import AppleCardsCarouselDemo from "@/components/AppleCardsCarouselDemo"
-// import ParallaxSection from "@/components/ParallaxExample"
+import ParallaxSection from "@/components/ParallaxExample"
 import StatsSection from "@/components/StatsSection"
 import ServicesSection from "@/components/ServicesSection"
 import { ClipPathLinks } from "@/components/ClipPathLinks"
@@ -520,7 +520,7 @@ return (
       </div>
 
       <HeroScrollDemo />
-      
+      <StatsSection />
 
       {/* Services Section */}
       <div className="top-0">
@@ -537,8 +537,10 @@ return (
 
       <AppleCardsCarouselDemo />
     <ClipPathLinks/>
-      <StatsSection />
 
+      <div className="bg-[#dbebff]">
+        <ParallaxSection />
+      </div>
     </div>
     </div>
   )
