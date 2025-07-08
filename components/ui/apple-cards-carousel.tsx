@@ -1,8 +1,9 @@
 "use client"
+
 import React, { useEffect, useRef, useState, createContext, useContext } from "react"
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
-import { AnimatePresence, motion } from "motion/react"
+import { AnimatePresence, motion } from "framer-motion"
 import Image, { type ImageProps } from "next/image"
 import { useOutsideClick } from "@/hooks/use-outside-click"
 import type { CardData } from "@/app/templates/data/cards-data"
@@ -22,11 +23,22 @@ export const CarouselContext = createContext<{
 })
 
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
-  const carouselRef = React.useRef<HTMLDivElement>(null)
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false)
-  const [canScrollRight, setCanScrollRight] = React.useState(true)
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoSliding, setIsAutoSliding] = useState(true)
+
+  const isMobile = () =>
+    typeof window !== "undefined" && window.innerWidth < 768
+
+  const checkScrollability = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
+      setCanScrollLeft(scrollLeft > 0)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth)
+    }
+  }
 
   useEffect(() => {
     if (!isAutoSliding) return
@@ -35,15 +47,13 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
         const isAtEnd = scrollLeft >= scrollWidth - clientWidth - 10
         if (isAtEnd) {
-          // Reset to beginning
           carouselRef.current.scrollTo({ left: 0, behavior: "smooth" })
         } else {
-          // Scroll to next
           carouselRef.current.scrollBy({ left: 300, behavior: "smooth" })
         }
         checkScrollability()
       }
-    }, 3000) // Auto-slide every 3 seconds
+    }, 3000)
     return () => clearInterval(interval)
   }, [isAutoSliding])
 
@@ -54,35 +64,21 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     }
   }, [initialScroll])
 
-  const checkScrollability = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
-      setCanScrollLeft(scrollLeft > 0)
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth)
-    }
-  }
-
   const scrollLeft = () => {
     setIsAutoSliding(false)
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" })
-    }
-    // Resume auto-slide after 5 seconds
+    carouselRef.current?.scrollBy({ left: -300, behavior: "smooth" })
     setTimeout(() => setIsAutoSliding(true), 5000)
   }
 
   const scrollRight = () => {
     setIsAutoSliding(false)
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" })
-    }
-    // Resume auto-slide after 5 seconds
+    carouselRef.current?.scrollBy({ left: 300, behavior: "smooth" })
     setTimeout(() => setIsAutoSliding(true), 5000)
   }
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384 // (md:w-96)
+      const cardWidth = isMobile() ? 230 : 384
       const gap = isMobile() ? 4 : 8
       const scrollPosition = (cardWidth + gap) * (index + 1)
       carouselRef.current.scrollTo({
@@ -93,14 +89,10 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     }
   }
 
-  const isMobile = () => {
-    return window && window.innerWidth < 768
-  }
-
   return (
     <CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex }}>
       <div className="relative w-full">
-        {/* Left Navigation Button */}
+        {/* Left Navigation */}
         <button
           className="absolute left-4 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 hover:bg-white disabled:opacity-50 shadow-lg transition-all duration-200 backdrop-blur-sm border border-gray-200 md:h-14 md:w-14"
           onClick={scrollLeft}
@@ -109,7 +101,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           <IconArrowNarrowLeft className="h-5 w-5 text-gray-700 md:h-6 md:w-6" />
         </button>
 
-        {/* Right Navigation Button */}
+        {/* Right Navigation */}
         <button
           className="absolute right-4 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 hover:bg-white disabled:opacity-50 shadow-lg transition-all duration-200 backdrop-blur-sm border border-gray-200 md:h-14 md:w-14"
           onClick={scrollRight}
@@ -118,6 +110,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           <IconArrowNarrowRight className="h-5 w-5 text-gray-700 md:h-6 md:w-6" />
         </button>
 
+        {/* Scroll Area */}
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
           ref={carouselRef}
@@ -125,23 +118,15 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           onMouseEnter={() => setIsAutoSliding(false)}
           onMouseLeave={() => setIsAutoSliding(true)}
         >
-          <div className={cn("absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l")}></div>
-          <div className={cn("flex flex-row justify-start gap-4 pl-4", "mx-auto max-w-7xl")}>
+          <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white/80 to-transparent pointer-events-none z-10" />
+          <div className="flex flex-row justify-start gap-4 pl-4 mx-auto max-w-7xl">
             {items.map((item, index) => (
               <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: {
-                    duration: 0.5,
-                    delay: 0.2 * index,
-                    ease: "easeOut",
-                    once: true,
-                  },
+                  transition: { duration: 0.5, delay: 0.2 * index, ease: "easeOut", once: true },
                 }}
                 key={"card" + index}
                 className="rounded-3xl last:pr-[5%] md:last:pr-[33%]"
@@ -149,43 +134,25 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                 {item}
               </motion.div>
             ))}
-            {/* Templates Button Card */}
+            {/* Templates Button */}
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: 1,
                 y: 0,
-                transition: {
-                  duration: 0.5,
-                  delay: 0.2 * items.length,
-                  ease: "easeOut",
-                  once: true,
-                },
+                transition: { duration: 0.5, delay: 0.2 * items.length, ease: "easeOut", once: true },
               }}
               className="rounded-3xl pr-[5%] md:pr-[33%]"
             >
               <motion.button
-                onClick={() => (window.location.href = "/templates")}
+                onClick={() => (typeof window !== "undefined" && (window.location.href = "/templates"))}
                 className="relative z-10 flex h-56 w-80 flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 md:h-96 md:w-[40rem] hover:from-blue-600 hover:to-purple-700 transition-all duration-300 border-4 border-blue-400 hover:border-purple-400"
               >
                 <div className="relative z-40 text-center">
-                  <motion.p className="font-sans text-sm font-medium text-white/80 md:text-base mb-2">
-                    Explore More
-                  </motion.p>
-                  <motion.p className="font-sans text-xl font-semibold text-white md:text-3xl mb-4">
-                    View All Templates
-                  </motion.p>
+                  <p className="font-sans text-sm font-medium text-white/80 md:text-base mb-2">Explore More</p>
+                  <p className="font-sans text-xl font-semibold text-white md:text-3xl mb-4">View All Templates</p>
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -212,29 +179,12 @@ export const Card = ({
   isTemplateCard?: boolean
 }) => {
   const [open, setOpen] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
+  const containerRef = useRef<HTMLDivElement>(null)
   const { onCardClose, currentIndex } = useContext(CarouselContext)
-
-  useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        handleClose()
-      }
-    }
-    if (open) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
-    window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
-  }, [open])
-
-  useOutsideClick(containerRef, () => handleClose())
 
   const handleOpen = () => {
     if (isTemplateCard) {
-      window.location.href = "/templates"
+      typeof window !== "undefined" && (window.location.href = "/templates")
       return
     }
     setOpen(true)
@@ -244,6 +194,19 @@ export const Card = ({
     setOpen(false)
     onCardClose(index)
   }
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") handleClose()
+    }
+    if (open) document.body.style.overflow = "hidden"
+    else document.body.style.overflow = "auto"
+
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [open])
+
+  useOutsideClick(containerRef, () => handleClose())
 
   return (
     <>
@@ -266,7 +229,6 @@ export const Card = ({
                 ref={containerRef}
                 className="relative bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl w-full max-h-[90vh] overflow-y-auto max-w-lg md:max-w-3xl"
               >
-                {/* Header */}
                 <div className="sticky top-0 z-10 bg-white dark:bg-neutral-900 border-b border-gray-200 dark:border-neutral-700 p-6 rounded-t-2xl">
                   <div className="flex items-start justify-between">
                     <div>
@@ -282,7 +244,6 @@ export const Card = ({
                     </button>
                   </div>
                 </div>
-                {/* Content */}
                 <div className="p-6">
                   <TemplatePreview card={card} />
                 </div>
@@ -298,16 +259,10 @@ export const Card = ({
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
-          <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
-          >
+          <motion.p className="text-left font-sans text-sm font-medium text-white md:text-base">
             {card.category}
           </motion.p>
-          <motion.p
-            layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
-          >
+          <motion.p className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl">
             {card.title}
           </motion.p>
         </div>
@@ -329,7 +284,7 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }: Image
       loading="lazy"
       decoding="async"
       blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
+      alt={alt || "Background of a beautiful view"}
       {...rest}
     />
   )

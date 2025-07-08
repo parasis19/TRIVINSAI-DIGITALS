@@ -21,32 +21,38 @@ const stats = [
   },
 ]
 
-const useCountUp = (target: number, duration: number = 2000, start: boolean) => {
+const useCountUp = (target: number, duration = 2000, shouldStart: boolean) => {
   const [count, setCount] = useState(0)
-  const frame = useRef<number>()
+  const frameRef = useRef<number | null>(null)
+  const startTimeRef = useRef<number>(0)
 
   useEffect(() => {
-    if (!start) {
+    if (!shouldStart) {
       setCount(0)
       return
     }
 
-    let startTime = performance.now()
-
-    const animate = (now: number) => {
-      const elapsed = now - startTime
+    const animate = (timestamp: number) => {
+      if (!startTimeRef.current) startTimeRef.current = timestamp
+      const elapsed = timestamp - startTimeRef.current
       const progress = Math.min(elapsed / duration, 1)
+
       setCount(Math.floor(progress * target))
 
       if (progress < 1) {
-        frame.current = requestAnimationFrame(animate)
+        frameRef.current = requestAnimationFrame(animate)
       }
     }
 
-    frame.current = requestAnimationFrame(animate)
+    frameRef.current = requestAnimationFrame(animate)
 
-    return () => cancelAnimationFrame(frame.current!)
-  }, [target, duration, start])
+    return () => {
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current)
+      }
+      startTimeRef.current = 0
+    }
+  }, [target, duration, shouldStart])
 
   return count
 }
@@ -60,20 +66,21 @@ export default function StatsSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          observer.disconnect() // Only trigger once
+          observer.disconnect()
         }
       },
       {
-        threshold: 0.3,
+        threshold: 0.2,
       }
     )
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
+    const container = containerRef.current
+    if (container) {
+      observer.observe(container)
     }
 
     return () => {
-      observer.disconnect()
+      if (container) observer.disconnect()
     }
   }, [])
 
@@ -83,7 +90,7 @@ export default function StatsSection() {
       className="py-16 md:py-24 bg-gradient-to-b from-[#e5f6fd] to-[#ffffff]"
     >
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#1e293b]">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#0b486e]">
           Trusted by Thousands
         </h2>
 
@@ -94,13 +101,15 @@ export default function StatsSection() {
             return (
               <div
                 key={index}
-                className="group bg-white hover:shadow-2xl rounded-xl p-6 shadow-md transition-all duration-300 hover:scale-105 border border-[#dbeeff]"
+                className="bg-white rounded-xl p-6 border border-[#dbeeff] shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <div className="mb-4 flex justify-center">{stat.icon}</div>
                 <div className="text-4xl font-bold text-[#169ed9]">
                   {count.toLocaleString()}
                 </div>
-                <div className="text-[#4b5563] mt-2 text-lg">{stat.label}</div>
+                <div className="text-[#0b486e] mt-2 text-lg font-medium">
+                  {stat.label}
+                </div>
               </div>
             )
           })}

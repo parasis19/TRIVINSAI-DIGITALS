@@ -20,7 +20,7 @@ const services = [
     link: "/services#apps",
   },
   {
-    title: "Visual Design",
+    title: "Graphic Design",
     description: "Striking videos and graphic posters tailored to elevate your brand presence.",
     icon: PenTool,
     benefits: ["Engaging video production", "Custom poster design", "Cross-platform compatibility"],

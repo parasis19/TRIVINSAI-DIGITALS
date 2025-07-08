@@ -378,7 +378,7 @@ return (
                     >
                       your
                     </span>
-                    <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase text-gray-900 tracking-tight leading-none">
+                    <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase text-[#0b486e] tracking-tight leading-none">
                       DIGITAL FUTURE
                     </span>
                   </div>
@@ -388,7 +388,7 @@ return (
                     <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-600 leading-none">
                       starts here
                     </span>
-                    <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black uppercase text-gray-900 tracking-tight leading-none">
+                    <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black uppercase text-[#0b486e] tracking-tight leading-none">
                       BUILD IT
                     </span>
                     <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-600 leading-none">

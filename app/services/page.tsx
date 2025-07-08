@@ -29,122 +29,15 @@ export default function ServicesPage() {
 
 
       {/* Website Development */}
-      <section id="websites" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 w-full">
-              <ScrollAnimation>
-                <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image
-                    src="/services/webC.jpg"
-                    alt="Website Development"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
-                  />
-                </div>
-              </ScrollAnimation>
-            </div>
-            <div className="lg:w-1/2 space-y-6">
-              <ScrollAnimation>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
-                  Website Development
-                </h2>
-                <p className="text-xl text-muted-foreground mb-6">
-                  We create beautiful, responsive websites that captivate your audience and drive conversions.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    ["Responsive Design:", "Websites that look great on any device"],
-                    ["SEO Optimization:", "Built to rank well in search engines"],
-                    ["Performance:", "Fast loading times and smooth interactions"],
-                    ["Content Management:", "Easy-to-use systems for updating content"],
-                  ].map(([title, desc], i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#169ed9] mr-2 text-xl">•</span>
-                      <p className="text-foreground">
-                        <span className="font-semibold">{title}</span> {desc}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4">
-                  <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
-                      Get a Quote
-                    </Button>
-                  </a>
-                </div>
-              </ScrollAnimation>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* App Development */}
-      <section id="apps" className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
-            <div className="lg:w-1/2 w-full">
-              <ScrollAnimation>
-                <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image
-                    src="/services/appC.jpg"
-                    alt="App Development"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
-                  />
-                </div>
-              </ScrollAnimation>
-            </div>
-            <div className="lg:w-1/2 space-y-6">
-              <ScrollAnimation>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
-                  App Development
-                </h2>
-                <p className="text-xl text-muted-foreground mb-6">
-                  We develop native and cross-platform mobile applications that deliver exceptional user experiences.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    ["Native Apps:", "iOS and Android applications"],
-                    ["Cross-Platform:", "Apps that work on multiple platforms"],
-                    ["UX/UI Design:", "Intuitive and engaging user interfaces"],
-                    ["Maintenance:", "Ongoing support and updates"],
-                  ].map(([title, desc], i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#169ed9] mr-2 text-xl">•</span>
-                      <p className="text-foreground">
-                        <span className="font-semibold">{title}</span> {desc}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4">
-                  <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
-                      Get a Quote
-                    </Button>
-                  </a>
-                </div>
-              </ScrollAnimation>
-            </div>
-          </div>
-        </div>
-      </section>
-{/* visual design */}
-<section id="ads" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
+<section id="websites" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
   <div className="container mx-auto px-4">
     <div className="flex flex-col lg:flex-row items-center gap-12">
       <div className="lg:w-1/2 w-full">
         <ScrollAnimation>
           <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
             <Image
-              src="/services/addC.jpg"
-              alt="Visual Design Showcase"
+              src="/services/webC.jpg"
+              alt="Website Development"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -156,17 +49,17 @@ export default function ServicesPage() {
       <div className="lg:w-1/2 space-y-6">
         <ScrollAnimation>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
-            Visual Design
+            Website Development
           </h2>
           <p className="text-xl text-muted-foreground mb-6">
-            We craft compelling visual content including promotional videos and graphic posters to elevate your brand’s identity across platforms.
+            We create beautiful, responsive websites that captivate your audience and drive conversions.
           </p>
           <ul className="space-y-4">
             {[
-              ["Video Production:", "Engaging promotional & explainer videos"],
-              ["Graphic Posters:", "Custom visuals tailored for impact"],
-              ["Brand Messaging:", "Designs aligned with your brand tone"],
-              ["Multi-Platform Ready:", "Optimized for web, social & print"],
+              ["Responsive Design:", "Websites that look great on any device"],
+              ["SEO Optimization:", "Built to rank well in search engines"],
+              ["Performance:", "Fast loading times and smooth interactions"],
+              ["Content Management:", "Easy-to-use systems for updating content"],
             ].map(([title, desc], i) => (
               <li key={i} className="flex items-start">
                 <span className="text-[#169ed9] mr-2 text-xl">•</span>
@@ -177,7 +70,11 @@ export default function ServicesPage() {
             ))}
           </ul>
           <div className="pt-4">
-            <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="mailto:marketing@trivinsai.com?subject=Web%20Development%20Quote%20Request&body=Hi%20Trivinsai%20Team,%0D%0A%0D%0AI%20am%20interested%20in%20your%20Website%20Development%20services.%20Please%20share%20the%20pricing,%20process,%20and%20timelines.%0D%0A%0D%0AMy%20project%20details%20are%20as%20follows:%0D%0A-%20Business%20Type:%0D%0A-%20Website%20Type%20(e.g.,%20portfolio,%20ecommerce):%0D%0A-%20Features%20Required:%0D%0A-%20Preferred%20Timeline:%0D%0A%0D%0AThanks!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
                 Get a Quote
               </Button>
@@ -189,13 +86,126 @@ export default function ServicesPage() {
   </div>
 </section>
 
+      {/* App Development */}
+<section id="apps" className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+      <div className="lg:w-1/2 w-full">
+        <ScrollAnimation>
+          <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
+            <Image
+              src="/services/appC.jpg"
+              alt="App Development"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+          </div>
+        </ScrollAnimation>
+      </div>
+      <div className="lg:w-1/2 space-y-6">
+        <ScrollAnimation>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
+            App Development
+          </h2>
+          <p className="text-xl text-muted-foreground mb-6">
+            We develop native and cross-platform mobile applications that deliver exceptional user experiences.
+          </p>
+          <ul className="space-y-4">
+            {[
+              ["Native Apps:", "iOS and Android applications"],
+              ["Cross-Platform:", "Apps that work on multiple platforms"],
+              ["UX/UI Design:", "Intuitive and engaging user interfaces"],
+              ["Maintenance:", "Ongoing support and updates"],
+            ].map(([title, desc], i) => (
+              <li key={i} className="flex items-start">
+                <span className="text-[#169ed9] mr-2 text-xl">•</span>
+                <p className="text-foreground">
+                  <span className="font-semibold">{title}</span> {desc}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="pt-4">
+            <a
+              href="mailto:marketing@trivinsai.com?subject=App%20Development%20Quote%20Request&body=Hi%20Trivinsai%20Team,%0D%0A%0D%0AI%20am%20interested%20in%20your%20App%20Development%20services.%20Please%20share%20the%20pricing,%20process,%20and%20timelines.%0D%0A%0D%0AMy%20project%20details%20are%20as%20follows:%0D%0A-%20App%20Type%20(Native%20or%20Cross-Platform):%0D%0A-%20Platform%20(iOS,%20Android,%20Both):%0D%0A-%20Features%20Required:%0D%0A-%20Preferred%20Timeline:%0D%0A%0D%0AThanks!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
+                Get a Quote
+              </Button>
+            </a>
+          </div>
+        </ScrollAnimation>
+      </div>
+    </div>
+  </div>
+</section>
 
- {/* Digital Marketing */}
+{/* Graphic Design */}
+<section id="ads" className="py-16 md:py-24 dark:bg-[#1e293b] bg-[#edeef0]">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="lg:w-1/2 w-full">
+        <ScrollAnimation>
+          <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
+            <Image
+              src="/services/addC.jpg"
+              alt="Graphic Design Showcase"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+          </div>
+        </ScrollAnimation>
+      </div>
+      <div className="lg:w-1/2 space-y-6">
+        <ScrollAnimation>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
+            Graphic Design
+          </h2>
+          <p className="text-xl text-muted-foreground mb-6">
+            Our team creates stunning graphic assets—from marketing materials to digital illustrations—that bring your brand to life with clarity and style.
+          </p>
+          <ul className="space-y-4">
+            {[
+              ["Logo Design:", "Unique logos that capture your brand essence"],
+              ["Marketing Materials:", "Brochures, flyers & banners for any campaign"],
+              ["Social Media Graphics:", "Consistent visuals across your channels"],
+              ["Print & Digital Ready:", "Optimized formats for all media types"],
+            ].map(([title, desc], i) => (
+              <li key={i} className="flex items-start">
+                <span className="text-[#169ed9] mr-2 text-xl">•</span>
+                <p className="text-foreground">
+                  <span className="font-semibold">{title}</span> {desc}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="pt-4">
+            <a
+              href="mailto:marketing@trivinsai.com?subject=Graphic%20Design%20Quote%20Request&body=Hi%20Trivinsai%20Team,%0D%0A%0D%0AI%20am%20interested%20in%20your%20Graphic%20Design%20services.%20Please%20share%20the%20pricing,%20process,%20and%20design%20portfolio.%0D%0A%0D%0AMy%20project%20details%20are%20as%20follows:%0D%0A-%20Type%20of%20Design%20(logo,%20social%20media,%20print):%0D%0A-%20Style/Preferences:%0D%0A-%20Deadline:%0D%0A%0D%0AThanks!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
+                Get a Quote
+              </Button>
+            </a>
+          </div>
+        </ScrollAnimation>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Digital Marketing */}
 <section id="marketing" className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
   <div className="container mx-auto px-4">
     <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
-      
-      {/* Right Image (will appear on top in mobile) */}
       <div className="lg:w-1/2 w-full">
         <ScrollAnimation>
           <div className="relative h-[220px] xs:h-[260px] sm:h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden">
@@ -210,8 +220,6 @@ export default function ServicesPage() {
           </div>
         </ScrollAnimation>
       </div>
-
-      {/* Left Text Content */}
       <div className="lg:w-1/2 space-y-6">
         <ScrollAnimation>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">
@@ -236,7 +244,11 @@ export default function ServicesPage() {
             ))}
           </ul>
           <div className="pt-4">
-            <a href="mailto:marketing@trivinsai.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="mailto:marketing@trivinsai.com?subject=Digital%20Marketing%20Quote%20Request&body=Hi%20Trivinsai%20Team,%0D%0A%0D%0AI%20am%20interested%20in%20your%20Digital%20Marketing%20services.%20Please%20share%20pricing%20and%20strategy%20details.%0D%0A%0D%0AMy%20project%20details%20are%20as%20follows:%0D%0A-%20Services%20Required%20(SEO,%20PPC,%20Social%20Media):%0D%0A-%20Target%20Audience/Region:%0D%0A-%20Budget%20Range:%0D%0A-%20Campaign%20Goal:%0D%0A%0D%0AThanks!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="bg-[#169ed9] hover:bg-[#127bb0] text-white">
                 Get a Quote
               </Button>
@@ -244,7 +256,6 @@ export default function ServicesPage() {
           </div>
         </ScrollAnimation>
       </div>
-
     </div>
   </div>
 </section>

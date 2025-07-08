@@ -34,13 +34,13 @@ export default function AboutPage() {
       name: "Saiyash M.",
       role: "Head of Digital Marketing",
        
-      image: "/ppl/c4.png",
+      image: "/ppl/naresh.png",
     },
         {
       name: "Rohan S.",
       role: "Head of Designer",
       
-      image: "/ppl/c4.png",
+      image: "/ppl/rohan.png",
     },
             
     {
@@ -98,7 +98,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
+      <section id="mission" className="py-16 md:py-24 bg-[#edeef0] dark:bg-[#1e293b]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
             <ScrollAnimation>
@@ -135,7 +135,7 @@ export default function AboutPage() {
           <ScrollAnimation>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e293b] dark:text-white">Our Story</h2>
-              <div className="w-24 h-1 bg-[#169ed9] mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-[#93dfff] mx-auto rounded-full"></div>
             </div>
           </ScrollAnimation>
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -178,8 +178,9 @@ export default function AboutPage() {
       </section>
 
       {/* Secure Team Section */}
-      <SecureTeamSection id="team" teamMembers={teamMembers} />
-
+      <section id="team">
+      <SecureTeamSection teamMembers={teamMembers} />
+      </section>
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-[#169ed9] dark:bg-[#1e293b]">
         <div className="container mx-auto px-4">

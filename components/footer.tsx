@@ -81,7 +81,7 @@ export default function Footer() {
                   href="/services#ads"
                   className="text-[#1e293b] dark:text-gray-400 hover:text-[#169ed9]"
                 >
-                  Visual Design
+                  Graphic Design 
                 </Link>
               </li>
               <li>
@@ -125,7 +125,7 @@ export default function Footer() {
             <ul className="space-y-4 text-[#1e293b] dark:text-gray-400">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-[#169ed9] mr-2 mt-0.5 flex-shrink-0" />
-                <span>Ratna Mahal Tower, Matunga, Mumbai</span>
+                <span>Ratna Mahal Tower,<br/> Matunga,<br/>  Mumbai.</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-[#169ed9] mr-2 flex-shrink-0" />
