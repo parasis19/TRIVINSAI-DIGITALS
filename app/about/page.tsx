@@ -16,19 +16,19 @@ export default function AboutPage() {
       name: "Devki M.",
       role: "Founder & CEO",
       
-      image: "/ppl/c1.png",
+      image: "/ppl/CEO.png",
     },
     {
       name: "Saroja D.",
       role: "General Manager (GM) ",
        
-      image: "/ppl/c2.png",
+      image: "/ppl/GM1.png",
     },
     {
       name: "Sahil P. ",
       role: "Cheif Technology Officer (CTO)",
        
-      image: "/ppl/c3-2.png",
+      image: "/ppl/sahil.png",
     },
     {
       name: "Saiyash M.",
@@ -38,27 +38,27 @@ export default function AboutPage() {
     },
         {
       name: "Rohan S.",
-      role: "Head of Designer",
+      role: "Head of Designing",
       
       image: "/ppl/rohan.png",
     },
             
     {
       name: "Saloni S.",
-      role: "Senior frentend Developer",
+      role: "Senior Frontend Developer",
       
-      image: "/ppl/c4.png",
+      image: "/ppl/saloni.png",
     },       
      {
       name: "Prashant S.",
-      role: "frontend developer",
+      role: "Frontend Developer",
       
       image: "/ppl/parasweb.png",
     },
      {
       name: "to be added.....",
       role: "you are the next member",
-      image: "/ppl/c4.png",
+      image: "/ppl/tofo1.png",
     },
   ]
 

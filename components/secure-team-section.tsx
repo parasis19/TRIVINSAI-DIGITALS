@@ -652,7 +652,7 @@ export default function SecureTeamSection({ teamMembers }: SecureTeamSectionProp
   )
 }
 
-// Secure Image Component (same as before)
+// Secure Image Component (no watermark)
 function SecureImage({
   src,
   alt,
@@ -666,7 +666,6 @@ function SecureImage({
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [imageLoaded, setImageLoaded] = useState(false)
-  const [showWatermark, setShowWatermark] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -697,19 +696,6 @@ function SecureImage({
 
         ctx.putImageData(imageData, 0, 0)
 
-        ctx.globalAlpha = 0.15
-        ctx.fillStyle = "#169ed9"
-        ctx.font = "bold 24px Arial"
-        ctx.textAlign = "center"
-        ctx.rotate(-Math.PI / 6)
-        ctx.fillText("TRIVINSAI", canvas.width / 2 - 50, canvas.height / 2)
-        ctx.fillText("DIGITAL", canvas.width / 2 - 50, canvas.height / 2 + 30)
-        ctx.rotate(Math.PI / 6)
-
-        ctx.globalAlpha = 0.1
-        ctx.font = "12px Arial"
-        ctx.fillText(new Date().toISOString().split("T")[0], canvas.width - 80, canvas.height - 10)
-
         setImageLoaded(true)
       } catch (error) {
         console.warn("Canvas rendering failed:", error)
@@ -723,14 +709,6 @@ function SecureImage({
 
     img.src = src
   }, [src, onSecurityViolation])
-
-  useEffect(() => {
-    const showWatermarkTimer = setInterval(() => {
-      setShowWatermark((prev) => !prev)
-    }, 3000)
-
-    return () => clearInterval(showWatermarkTimer)
-  }, [])
 
   const handleContextMenu = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -777,32 +755,6 @@ function SecureImage({
         }}
         onContextMenu={handleContextMenu}
       />
-
-      <div
-        className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-1000 ${
-          showWatermark ? "opacity-20" : "opacity-5"
-        }`}
-      >
-        <div className="text-white text-2xl md:text-4xl font-bold transform rotate-12 select-none">TRIVINSAI</div>
-      </div>
-
-      <div className="absolute top-2 left-2 text-xs text-white/30 pointer-events-none select-none">© TRIVINSAI</div>
-      <div className="absolute bottom-2 right-2 text-xs text-white/30 pointer-events-none select-none">
-        {new Date().getFullYear()}
-      </div>
-
-      <div
-        className="absolute inset-0 pointer-events-none opacity-5"
-        style={{
-          backgroundImage: `
-            linear-gradient(45deg, transparent 48%, rgba(22, 158, 217, 0.1) 49%, rgba(22, 158, 217, 0.1) 51%, transparent 52%),
-            linear-gradient(-45deg, transparent 48%, rgba(22, 158, 217, 0.1) 49%, rgba(22, 158, 217, 0.1) 51%, transparent 52%)
-          `,
-          backgroundSize: "20px 20px",
-        }}
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-500/5 pointer-events-none" />
     </div>
   )
 }
