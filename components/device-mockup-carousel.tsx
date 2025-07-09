@@ -461,7 +461,7 @@ return (
             variant="outline"
             className="border-blue-300 text-blue-800 hover:bg-blue-800 hover:text-white transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
           >
-            View Our Work
+            Explore Templates 
           </Button>
         </a>
       </div>

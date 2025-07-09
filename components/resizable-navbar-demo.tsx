@@ -1,4 +1,6 @@
 "use client"
+
+import { useState, useEffect, useRef } from "react"
 import {
   Navbar,
   NavBody,
@@ -10,7 +12,6 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar"
-import { useState } from "react"
 import {
   IconCode,
   IconDeviceMobile,
@@ -107,10 +108,59 @@ export default function NavbarDemo() {
   ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true) // State to control navbar visibility
+  const [isDesktop, setIsDesktop] = useState(false) // State to track desktop view
+  const lastScrollY = useRef(0) // Ref to store the last scroll position
+
+  useEffect(() => {
+    // Function to update isDesktop state based on window width
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768) // Assuming 'md' breakpoint for desktop
+    }
+
+    // Function to handle scroll behavior
+    const handleScroll = () => {
+      if (!isDesktop) {
+        // If not desktop, ensure navbar is always visible and exit
+        setIsVisible(true)
+        return
+      }
+
+      const currentScrollY = window.scrollY
+
+      // Hide navbar if scrolling down and past a certain scroll threshold (e.g., 100px)
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false)
+      }
+      // Show navbar if scrolling up
+      else if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true)
+      }
+
+      lastScrollY.current = currentScrollY
+    }
+
+    // Initial check on mount
+    handleResize()
+
+    // Add event listeners
+    window.addEventListener("resize", handleResize)
+    window.addEventListener("scroll", handleScroll)
+
+    // Cleanup event listeners on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [isDesktop]) // Re-run effect if isDesktop changes
 
   return (
     <div className="relative w-full">
-      <Navbar>
+      <Navbar
+        className={`fixed top-0 z-50 w-full transition-transform duration-300 ease-in-out ${
+          isDesktop && !isVisible ? "-translate-y-full" : "translate-y-0"
+        }`}
+      >
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
@@ -121,14 +171,12 @@ export default function NavbarDemo() {
             </NavbarButton>
           </div>
         </NavBody>
-
         {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
             <MobileNavToggle isOpen={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
           </MobileNavHeader>
-
           <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
             {navItems.map((item, idx) => (
               <div key={`mobile-section-${idx}`} className="w-full">
@@ -169,6 +217,7 @@ export default function NavbarDemo() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
+
     </div>
   )
 }
