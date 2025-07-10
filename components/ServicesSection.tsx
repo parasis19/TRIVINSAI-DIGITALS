@@ -19,12 +19,17 @@ const services = [
     benefits: ["Cross-platform support", "User-centric design", "Robust performance and scalability"],
     link: "/services#apps",
   },
-  {
-    title: "Graphic Design",
-    description: "Striking videos and graphic posters tailored to elevate your brand presence.",
-    icon: PenTool,
-    benefits: ["Engaging video production", "Custom poster design", "Cross-platform compatibility"],
-    link: "/services#ads",
+{
+  title: "Graphic Design",
+  description: "High-quality product photoshoots and graphic visuals to enhance your brand identity.",
+  icon: PenTool,
+  benefits: [
+    "Professional product photography",
+    "Custom graphics for print and digital",
+    "Brand-consistent visual design",
+  ],
+  link: "/services#ads",
+
   },
   {
     title: "Digital Marketing",

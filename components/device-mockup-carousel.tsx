@@ -520,7 +520,7 @@ return (
       </div>
 
       <HeroScrollDemo />
-      <StatsSection />
+      
 
       {/* Services Section */}
       <div className="top-0">
@@ -537,7 +537,7 @@ return (
 
       <AppleCardsCarouselDemo />
     <ClipPathLinks/>
-
+<StatsSection />
       <div className="bg-[#dbebff]">
         <ParallaxSection />
       </div>

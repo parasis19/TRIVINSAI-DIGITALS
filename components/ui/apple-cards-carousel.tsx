@@ -146,7 +146,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             >
               <motion.button
                 onClick={() => (typeof window !== "undefined" && (window.location.href = "/templates"))}
-                className="relative z-10 flex h-56 w-80 flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 md:h-96 md:w-[40rem] hover:from-blue-600 hover:to-purple-700 transition-all duration-300 border-4 border-blue-400 hover:border-purple-400"
+                className="relative z-10 flex h-56 w-80 flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-[#169fda] to-[#0b486e] md:h-96 md:w-[40rem] hover:from-[#abe6ff] hover:to-[#158cd6] transition-all duration-500 border-4 border-blue-400 hover:border-[#0b486e]"
               >
                 <div className="relative z-40 text-center">
                   <p className="font-sans text-sm font-medium text-white/80 md:text-base mb-2">Explore More</p>
@@ -255,7 +255,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-56 w-80 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-96 md:w-[40rem] dark:bg-neutral-900 hover:scale-105 transition-transform duration-300 border-4 border-gray-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400"
+        className="relative z-10 flex h-56 w-80 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-96 md:w-[40rem] dhover:scale-105 transition-transform duration-300 border-4 border-gray-300 hover:border-[#0b486e]"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
