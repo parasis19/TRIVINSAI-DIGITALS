@@ -17,54 +17,60 @@ export const categories = [
 ]
 
 export const templates: Template[] = [
-  {
-    id: "template-1",
-    title: "TrivinSai Main",
-    category: "Company",
-    image: "/templates/t1.png",
-    description: "A sleek, modern blog template with responsive layout.",
-    previewUrl: "https://trivinsai-design.netlify.app/#", // 🔗 Example link
-  },
-  {
-    id: "template-2",
-    title: "Sujaya",
-    category: "portfolio",
-    image: "/templates/sujaya.png",
-    description: "A bold portfolio template for showcasing creative work.",
-    previewUrl: "https://sujaya-boards.vercel.app/",
-  },
-  {
-    id: "template-3",
-    title: "Business Landing Page",
-    category: "business",
-    image: "/templates/reed.png",
-    description: "A professional landing page template for businesses.",
-    previewUrl: "https://yourdomain.com/templates/template-3",
-  },
-  {
-    id: "template-4",
-    title: "eCommerce Store",
-    category: "ecommerce",
-    image: "/templates/pqc.png",
-    description: "An eCommerce template with a clean, modern design.",
-    previewUrl: "https://print-qc-55uv.vercel.app/",
-  },
-  {
-    id: "template-5",
-    title: "Minimal Portfolio",
-    category: "portfolio",
-    image: "/templates/parshwa.png",
-    description: "A minimalistic portfolio template for designers.",
-    previewUrl: "https://parshwa-plastic.vercel.app/",
-  },
-  {
-    id: "template-6",
-    title: "Landing Page Pro",
-    category: "landing",
-    image: "/templates/paper.png",
-    description: "A professional landing page template with advanced features.",
-    previewUrl: "https://board-paper-website.vercel.app/",
-  },
+ {
+  id: "template-1",
+  title: "GlowUp Beauty Store",
+  category: "ecommerce",
+  image: "/templates/luxe.png",
+  description:
+    "A sleek and user-friendly beauty e-commerce platform designed to showcase cosmetics and skincare products with style. Includes product galleries, shopping cart, and seamless checkout.",
+  previewUrl: "https://beauty-cosmetics-ten.vercel.app/"
+},
+{
+  id: "template-2",
+  title: "PixelNova Tech",
+  category: "business",
+  image: "/templates/tech.png",
+  description:
+    "A modern and professional landing page for IT service providers, showcasing technology solutions, company expertise, and service offerings in a sleek layout.",
+  previewUrl: "https://pixelnova-tech-landing.vercel.app/"
+},
+{
+  id: "template-3",
+  title: "Creative Portfolio",
+  category: "portfolio",
+  image: "/templates/meport.png",
+  description:
+    "A clean and modern portfolio website to showcase your projects, skills, and professional background. Ideal for developers, designers, and creatives.",
+  previewUrl: "https://portfolio1-olive-five.vercel.app/"
+},
+{
+  id: "template-4",
+  title: "Wanderlust Chronicles",
+  category: "blog",
+  image: "/templates/b1.png",
+  description:
+    "A beautifully designed travel blog template for sharing stories, photos, and guides. Perfect for bloggers, storytellers, and digital nomads.",
+  previewUrl: "https://travel-blog-lac-delta.vercel.app/"
+},
+{
+  id: "template-5",
+  title: "Travel Tales Blog",
+  category: "blog",
+  image: "/templates/b2.png",
+  description:
+    "A modern and engaging blog template ideal for sharing travel experiences, personal stories, or niche content. Includes featured posts, categories, and a clean reading layout.",
+  previewUrl: "https://travel-blog2.vercel.app/"
+},
+{
+  id: "template-6",
+  title: "Creative Works Portfolio",
+  category: "portfolio",
+  image: "/templates/roha.png",
+  description:
+    "A stylish and minimal portfolio template ideal for showcasing personal projects, case studies, and professional experience. Perfect for designers, developers, and freelancers.",
+  previewUrl: "https://portfolio2-gules-kappa.vercel.app/"
+},
   {
     id: "template-7",
     title: "Blog Master",

@@ -16,107 +16,111 @@ export interface CardData {
 }
 
 export const cardsData: CardData[] = [
-  {
-    id: "ai-dashboard",
-    category: "Artificial Intelligence",
-    title: "Brainwave AI Analytics",
-    src: "/templates/brainwave.png",
-    websiteUrl: "https://brainwave-ai-hub.netlify.app/",
-    emailSubject: "AI Dashboard Template Inquiry",
-    emailBody:
-      "Hi, I'm interested in the AI Analytics Dashboard template and would like to know more about its features.",
+{
+  id: "beauty-ecommerce",
+  category: "E-commerce",
+  title: "GlowUp Beauty Store",
+  src: "/templates/luxe.png",
+  websiteUrl: "https://beauty-cosmetics-ten.vercel.app/",
+  emailSubject: "Beauty Store Template Inquiry",
+  emailBody:
+    "Hi, I'm interested in the Beauty E-commerce template and would like to know more about its features.",
+  description:
+    "A sleek and user-friendly beauty e-commerce platform designed to showcase cosmetics and skincare products with style. Includes product galleries, shopping cart, and seamless checkout.",
+  templatePreview: {
+    image: "/templates/luxe.png",
     description:
-      "A comprehensive AI-powered analytics dashboard that provides real-time insights, predictive analytics, and machine learning visualizations for data-driven decision making.",
-    templatePreview: {
-      image: "/templates/brainwave.png",
-      description:
-        "Modern dashboard template with clean design, data visualization charts, and responsive layout perfect for AI and analytics applications.",
-      previewUrl: "https://brainwave-ai-hub.netlify.app/",
-    },
-  },
-  {
-    id: "bussiness-app",
-    category: "Bussiness",
-    title: "Disha Acroplast ",
-    src: "/templates/disha.png",
-    websiteUrl: "http://disha-acroplast.vercel.app/",
-    emailSubject: "Task Management Template Inquiry",
-    emailBody: "Hello, I'd like to learn more about the Task Management Suite template and its productivity features.",
+      "Modern e-commerce template with an elegant design, responsive product pages, and smooth shopping experience — perfect for beauty and cosmetic brands.",
+    previewUrl: "https://beauty-cosmetics-ten.vercel.app/",
+  }
+},
+ {
+  id: "it-solutions-landing",
+  category: "IT Solutions",
+  title: "PixelNova Tech",
+  src: "/templates/tech.png",
+  websiteUrl: "https://pixelnova-tech-landing.vercel.app/",
+  emailSubject: "IT Solutions Landing Page Inquiry",
+  emailBody: "Hello, I'm interested in the IT Solutions landing page and would like to know more about its features and customization options.",
+  description:
+    "A modern and professional landing page for IT service providers, showcasing technology solutions, company expertise, and service offerings in a sleek layout.",
+  templatePreview: {
+    image: "/templates/tech.png",
     description:
-      "Streamline your workflow with this comprehensive task management suite featuring project tracking, team collaboration, and productivity analytics.",
-    templatePreview: {
-      image: "/templates/disha.png",
-      description:
-        "Clean and intuitive task management interface with kanban boards, project timelines, and team collaboration features.",
-      previewUrl: "http://disha-acroplast.vercel.app/",
-    },
-  },
-  {
-    id: "bussiness-website",
-    category: "Manufaturer",
-    title: "Parshwa Plastics",
-    src: "/templates/parshwa.png",
-    websiteUrl: "https://parshwaplastics.com",
-    emailSubject: "E-commerce Template Inquiry",
-    emailBody: "Hi, I'm interested in the Modern Online Store template for my business.",
+      "Stylish and responsive IT services landing page featuring solution overviews, feature highlights, and client-focused design — ideal for tech startups and service companies.",
+    previewUrl: "https://pixelnova-tech-landing.vercel.app/",
+  }
+},
+ {
+  id: "personal-portfolio",
+  category: "Portfolio",
+  title: "Creative Portfolio",
+  src: "/templates/meport.png",
+  websiteUrl: "https://portfolio1-olive-five.vercel.app/",
+  emailSubject: "Portfolio Template Inquiry",
+  emailBody: "Hi, I'm interested in the Portfolio template and would like to know more about its design and customization options.",
+  description:
+    "A clean and modern portfolio website to showcase your projects, skills, and professional background. Ideal for developers, designers, and creatives.",
+  templatePreview: {
+    image: "/templates/meport.png",
     description:
-      "Launch your online business with this feature-rich e-commerce template including payment processing, inventory management, and customer analytics.",
-    templatePreview: {
-      image:  "/templates/parshwa.png",
-      description:
-        "Professional e-commerce template with product galleries, shopping cart, checkout process, and mobile-responsive design.",
-      previewUrl: "https://parshwaplastics.com",
-    },
-  },
-  {
-    id: "bussiness-website",
-    category: "bussiness",
-    title: "Paper Board",
-    src: "/templates/paper.png",
-    websiteUrl: "https://paperboard.net.in",
-    emailSubject: "Portfolio Template Inquiry",
-    emailBody: "Hello, I'd like to know more about the Creative Portfolio template for showcasing my work.",
+      "Sleek and minimal portfolio template featuring project galleries, smooth animations, and a responsive layout to highlight your personal brand.",
+    previewUrl: "https://portfolio1-olive-five.vercel.app/",
+  }
+},
+
+ {
+  id: "travel-blog",
+  category: "Blog",
+  title: "Wanderlust Chronicles",
+  src: "/templates/b1.png",
+  websiteUrl: "https://travel-blog-lac-delta.vercel.app/",
+  emailSubject: "Blog Template Inquiry",
+  emailBody: "Hi, I'm interested in the Blog template and would like to know more about its features and layout options.",
+  description:
+    "A beautifully designed travel blog template for sharing stories, photos, and guides. Perfect for bloggers, storytellers, and digital nomads.",
+  templatePreview: {
+    image: "/templates/b1.png",
     description:
-      "Showcase your creative work with this stunning portfolio template featuring smooth animations, project galleries, and contact forms.",
-    templatePreview: {
-      image: "/templates/paper.png",
-      description:
-        "Elegant portfolio layout with image galleries, project showcases, and smooth scrolling animations perfect for creatives.",
-      previewUrl:  "https://paperboard.net.in",
-    },
-  },
-  {
-    id: "bussines landing page",
-    category: "manufacturer",
-    title: "Print QC",
-    src: "/templates/pqc.png",
-    websiteUrl:" https://print-qc-55uv.vercel.app/",
-    emailSubject: "PQC bussiness Landing Page Template Inquiry",
-    emailBody: "Hi, I'm interested in the SaaS Landing Page template for my startup.",
+      "Modern blog layout with featured posts, image-rich articles, and responsive design — ideal for travel enthusiasts and content creators.",
+    previewUrl: "https://travel-blog-lac-delta.vercel.app/",
+  }
+}
+,
+ {
+  id: "blog-website",
+  category: "Blog",
+  title: "Travel Tales Blog",
+  src: "/templates/b2.png",
+  websiteUrl: "https://travel-blog2.vercel.app/",
+  emailSubject: "Blog Template Inquiry",
+  emailBody: "Hi, I'm interested in the Blog template and would like to learn more about its features and customization options.",
+  description:
+    "A modern and engaging blog template ideal for sharing travel experiences, personal stories, or niche content. Includes featured posts, categories, and a clean reading layout.",
+  templatePreview: {
+    image: "/templates/b2.png",
     description:
-      "Convert visitors into customers with this high-converting SaaS landing page featuring pricing tables, testimonials, and lead capture forms.",
-    templatePreview: {
-      image: "/templates/pqc.png",
-      description:
-        "High-converting landing page design with hero sections, pricing tables, testimonials, and call-to-action buttons optimized for SaaS products.",
-      previewUrl:" https://print-qc-55uv.vercel.app/",
-    },
-  },
-  {
-    id: "e-commerce",
-    category: "e-commerce",
-    title: "SmileX ",
-    src: "/templates/smilex.png",
-    websiteUrl: "https://smilex.net.in",
-    emailSubject: "Blog Platform Template Inquiry",
-    emailBody: "Hello, I'd like to learn more about the Modern Blog Platform template.",
+      "Stylish blog design with a focus on readability, featured articles, and mobile-responsive layout — perfect for bloggers and storytellers.",
+    previewUrl: "https://travel-blog2.vercel.app/",
+  }
+}
+,
+{
+  id: "portfolio-site",
+  category: "Portfolio",
+  title: "Creative Works Portfolio",
+  src: "/templates/roha.png",
+  websiteUrl: "https://portfolio2-gules-kappa.vercel.app/",
+  emailSubject: "Portfolio Template Inquiry",
+  emailBody: "Hello, I'm interested in the Portfolio template and would like to learn more about its layout and customization options.",
+  description:
+    "A stylish and minimal portfolio template ideal for showcasing personal projects, case studies, and professional experience. Perfect for designers, developers, and freelancers.",
+  templatePreview: {
+    image: "/templates/roha.png",
     description:
-      "Share your thoughts with the world using this modern blog platform featuring rich text editing, social sharing, and SEO optimization.",
-    templatePreview: {
-      image:  "/templates/smilex.png",
-      description:
-        "Clean blog template with article layouts, reading progress indicators, and social sharing features for content creators.",
-      previewUrl:  "https://smilex.net.in",
-    },
-  },
+      "Elegant and responsive portfolio design with smooth scrolling, project showcases, and a modern layout that highlights your creative work.",
+    previewUrl: "https://portfolio2-gules-kappa.vercel.app/",
+  }
+},
+
 ]
